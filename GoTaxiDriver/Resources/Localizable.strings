@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  GoTaxiDriver
+
+  Created by Riaz on 23/11/17.
+  Copyright © 2017 Go Taxi. All rights reserved.
+*/
+//REGISTRATION
+"USERNAME" = "Username*";
+"FNAME" = "First name*";
+"LNAME" = "Last name*";
+"COUNTRY" = "Country*";
+"PHONE" = "Phone number*";
+"PASSWORD" = "Password*";
+"CONFIRM_PASSWORD" = "Confirm Password*";
+"REGISTER" = "REGISTER";
