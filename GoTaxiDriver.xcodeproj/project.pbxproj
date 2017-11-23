@@ -28,6 +28,7 @@
 		042AA7921FC687D8000BE630 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7891FC687D7000BE630 /* LoginViewController.swift */; };
 		042AA7941FC68855000BE630 /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7931FC68855000BE630 /* RegistrationRequest.swift */; };
 		042AA7971FC689D4000BE630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 042AA7961FC689D4000BE630 /* Localizable.strings */; };
+		0440F2551FC706D100DF7AE1 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440F2541FC706D100DF7AE1 /* NetworkConstants.swift */; };
 		04BD3E161FC69F270078A776 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E151FC69F270078A776 /* StringExtension.swift */; };
 		04BD3E171FC69F270078A776 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E151FC69F270078A776 /* StringExtension.swift */; };
 		04BD3E181FC69F270078A776 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E151FC69F270078A776 /* StringExtension.swift */; };
@@ -50,6 +51,9 @@
 		04BD3E661FC6CF3E0078A776 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E651FC6CF3E0078A776 /* UIViewControllerExtension.swift */; };
 		04BD3E671FC6CF3E0078A776 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E651FC6CF3E0078A776 /* UIViewControllerExtension.swift */; };
 		04BD3E681FC6CF3E0078A776 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E651FC6CF3E0078A776 /* UIViewControllerExtension.swift */; };
+		04BD3E691FC6EC300078A776 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7801FC687D7000BE630 /* TabViewController.swift */; };
+		04BD3E6A1FC6EC300078A776 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7801FC687D7000BE630 /* TabViewController.swift */; };
+		04BD3E6C1FC6ECB60078A776 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E6B1FC6ECB60078A776 /* UITextFieldExtension.swift */; };
 		24F81A8E60FA1D20FE899F93 /* Pods_GoTaxiDriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA534E9B9DA7EC8C5D38DE81 /* Pods_GoTaxiDriverTests.framework */; };
 		4290899B4A7515B138DCFEE4 /* Pods_GoTaxiDriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5593E4769A9317F522F6FC8 /* Pods_GoTaxiDriverUITests.framework */; };
 		C55CDD36C22CD3E51622BE39 /* Pods_GoTaxiDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E0CD5F421D14F5B184D283 /* Pods_GoTaxiDriver.framework */; };
@@ -100,6 +104,7 @@
 		042AA7891FC687D7000BE630 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		042AA7931FC68855000BE630 /* RegistrationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
 		042AA7961FC689D4000BE630 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		0440F2541FC706D100DF7AE1 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		04BD3E151FC69F270078A776 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		04BD3E4D1FC6A0580078A776 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04BD3E511FC6B5BD0078A776 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -108,6 +113,7 @@
 		04BD3E5D1FC6CB070078A776 /* LocaleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleExtension.swift; sourceTree = "<group>"; };
 		04BD3E611FC6CDD70078A776 /* ValidateOtp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateOtp.swift; sourceTree = "<group>"; };
 		04BD3E651FC6CF3E0078A776 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		04BD3E6B1FC6ECB60078A776 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		22FDD22298AD8E962AB8B6B0 /* Pods-GoTaxiDriver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoTaxiDriver.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoTaxiDriver/Pods-GoTaxiDriver.release.xcconfig"; sourceTree = "<group>"; };
 		7977A3869A0C4E468DB78005 /* Pods-GoTaxiDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoTaxiDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoTaxiDriver/Pods-GoTaxiDriver.debug.xcconfig"; sourceTree = "<group>"; };
 		848A7FB2196430065D3B8CD3 /* Pods-GoTaxiDriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoTaxiDriverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoTaxiDriverTests/Pods-GoTaxiDriverTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,7 +231,6 @@
 				042AA7871FC687D7000BE630 /* RatingsViewController.swift */,
 				04BD3E4C1FC6A0580078A776 /* BaseViewController */,
 				042AA7821FC687D7000BE630 /* Registration */,
-				042AA7801FC687D7000BE630 /* TabViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				04BD3E511FC6B5BD0078A776 /* UIColorExtension.swift */,
 				04BD3E5D1FC6CB070078A776 /* LocaleExtension.swift */,
 				04BD3E651FC6CF3E0078A776 /* UIViewControllerExtension.swift */,
+				04BD3E6B1FC6ECB60078A776 /* UITextFieldExtension.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				04BD3E4D1FC6A0580078A776 /* BaseViewController.swift */,
+				042AA7801FC687D7000BE630 /* TabViewController.swift */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -289,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				04BD3E541FC6BFA80078A776 /* NetworkManager.swift */,
+				0440F2541FC706D100DF7AE1 /* NetworkConstants.swift */,
 			);
 			path = ServiceManager;
 			sourceTree = "<group>";
@@ -626,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BD3E551FC6BFA80078A776 /* NetworkManager.swift in Sources */,
+				04BD3E6C1FC6ECB60078A776 /* UITextFieldExtension.swift in Sources */,
 				042AA7921FC687D8000BE630 /* LoginViewController.swift in Sources */,
 				042AA78A1FC687D8000BE630 /* TabViewController.swift in Sources */,
 				042AA78C1FC687D8000BE630 /* RegistrationTableCell.swift in Sources */,
@@ -641,6 +650,7 @@
 				042AA7911FC687D8000BE630 /* EarningsViewController.swift in Sources */,
 				042AA7901FC687D8000BE630 /* RatingsViewController.swift in Sources */,
 				042AA77E1FC687C8000BE630 /* FloatingLabelTextField.swift in Sources */,
+				0440F2551FC706D100DF7AE1 /* NetworkConstants.swift in Sources */,
 				042AA74F1FC686EC000BE630 /* GoTaxiDriver.xcdatamodeld in Sources */,
 				042AA78F1FC687D8000BE630 /* HomeViewController.swift in Sources */,
 				04BD3E5A1FC6C1540078A776 /* BaseResponse.swift in Sources */,
@@ -661,6 +671,7 @@
 				04BD3E561FC6BFA80078A776 /* NetworkManager.swift in Sources */,
 				04BD3E671FC6CF3E0078A776 /* UIViewControllerExtension.swift in Sources */,
 				04BD3E171FC69F270078A776 /* StringExtension.swift in Sources */,
+				04BD3E691FC6EC300078A776 /* TabViewController.swift in Sources */,
 				042AA75F1FC686EC000BE630 /* GoTaxiDriverTests.swift in Sources */,
 				04BD3E4F1FC6A0580078A776 /* BaseViewController.swift in Sources */,
 			);
@@ -676,6 +687,7 @@
 				04BD3E571FC6BFA80078A776 /* NetworkManager.swift in Sources */,
 				04BD3E681FC6CF3E0078A776 /* UIViewControllerExtension.swift in Sources */,
 				04BD3E181FC69F270078A776 /* StringExtension.swift in Sources */,
+				04BD3E6A1FC6EC300078A776 /* TabViewController.swift in Sources */,
 				042AA76A1FC686EC000BE630 /* GoTaxiDriverUITests.swift in Sources */,
 				04BD3E501FC6A0580078A776 /* BaseViewController.swift in Sources */,
 			);

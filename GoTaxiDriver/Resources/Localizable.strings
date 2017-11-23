@@ -14,3 +14,5 @@
 "PASSWORD" = "Password*";
 "CONFIRM_PASSWORD" = "Confirm Password*";
 "REGISTER" = "REGISTER";
+"SIGNIN" = "SIGN IN";
+"NEXT"  = "NEXT";

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         var initialVC: UIViewController?
         
-        if !(UserDefaults.standard.bool(forKey: Constants.isUserLoggedIn)){
+        if !(UserDefaults.standard.bool(forKey: DefaultKeys.isUserLoggedIn)){
             initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController")
             let navControler = UINavigationController(rootViewController: initialVC!)
             self.window?.rootViewController = navControler

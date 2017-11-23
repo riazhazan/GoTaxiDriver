@@ -14,7 +14,7 @@ class RegistrationRequest {
     var firstName: String?
     var lastName: String?
     var country:String?
-    var countryCode:String?
+    var countryCode:Int?
     var phone: String?
     var password: String?
     var confirmPassword:String?
@@ -27,8 +27,8 @@ class RegistrationRequest {
         dict["PhoneNumber"] = self.phone ?? ""
         dict["Username"] = self.userName ?? ""
         dict["Password"] = self.password ?? ""
-        dict["GcmID"] = "200"
-        dict["UserType"] = 100
+        dict["GcmID"] = 200
+        dict["UserType"] = userEntityCode
         dict["DeviceID"] = "kjashd898123jbaksjdh9-0sd-Simulator"
         return dict
     }

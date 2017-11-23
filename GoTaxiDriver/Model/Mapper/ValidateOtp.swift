@@ -28,3 +28,19 @@ class ValidateOtp: Mappable {
         
     }
 }
+
+class ValidateUserName: Mappable {
+    var statusCode: Int?
+    var statusMessage: String?
+    var isAvailable: Bool?
+    
+    required init?(map: Map) {
+        mapping(map: map)
+    }
+    
+    func mapping(map: Map) {
+        self.statusCode         <- map["StatusCode"]
+        self.statusMessage      <- map["StatusMessage"]
+        self.isAvailable        <- map["IsAvailable"]
+    }
+}

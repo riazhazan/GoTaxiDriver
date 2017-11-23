@@ -23,15 +23,19 @@ class LoginViewController: BaseViewController {
     var stepsCount = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        mobileNoTxtField.becomeFirstResponder()
         configureUIElements()
     }
 
     func configureUIElements() {
+        self.title = NSLocalizedString("SIGNIN", comment: "")
         hideOTPFields(hide: true)
         self.configureTextFieldBorder(textField: mobileNoTxtField)
         self.configureTextFieldBorder(textField: otpTxtField)
         self.configureTextFieldBorder(textField: countryTxtField)
+        self.mobileNoTxtField.setPaddingtoTextField(direction: .left)
+        self.otpTxtField.setPaddingtoTextField(direction: .left)
+        self.countryTxtField.setPaddingtoTextField(direction: .left)
     }
     
     func hideOTPFields(hide: Bool) {
@@ -39,7 +43,10 @@ class LoginViewController: BaseViewController {
         otpTxtField.isHidden = hide
         signInBtnTopConstrain.constant = 113
         if hide {
+            signInBtn.setTitle(NSLocalizedString("NEXT", comment: ""), for: .normal)
             signInBtnTopConstrain.constant = 30
+        }else {
+            signInBtn.setTitle(NSLocalizedString("SIGNIN", comment: ""), for: .normal)
         }
     }
     
@@ -50,26 +57,35 @@ class LoginViewController: BaseViewController {
     
     @IBAction func signInBtnAction(_ sender: Any) {
         
-        if stepsCount == 0 {
-            self.validatePhoneNumber()
-        }
-        
-    }
-
-    func validatePhoneNumber() {
-        
-        guard let mobileNumber = mobileNoTxtField.text else {
+        guard !(mobileNoTxtField.text?.isEmpty ?? true)! else {
             self.showAlertWithTitle("", message: "Please enter your mobile number", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
             return
         }
         
-        guard let country = countryTxtField.text else {
+        guard !(countryTxtField.text?.isEmpty ?? true)! else {
             self.showAlertWithTitle("", message: "Please select your country", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
             return
         }
-        let parameters: [String : Any] = ["CountryID" : 200, "Number": mobileNumber, "UserType": 100]
+        
+        if stepsCount == 0 {
+            self.validatePhoneNumber()
+            return
+        }
+        
+        guard !(otpTxtField.text?.isEmpty ?? true)! else {
+            self.showAlertWithTitle("", message: "Please enter the recived OTP", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
+            return
+        }
+        self.validateOTP()
+    }
+
+    func validatePhoneNumber() {
+        
+        let parameters: [String : Any] = ["CountryID" : 200, "Number": mobileNoTxtField.text!, "UserType": userEntityCode]
+        self.showActivityIndicator()
         NetworkManager.validateNumberByRequestingOTP(parameter: parameters) { (status, response) in
-            if response?.statusCode == 1 {
+            self.removeActivityIndicator()
+            if response?.statusCode == APIStatusCodes.OperationSuccess {
                 self.stepsCount = 1
                 self.hideOTPFields(hide: false)
                 return
@@ -79,30 +95,16 @@ class LoginViewController: BaseViewController {
     }
     
     func validateOTP() {
-        
-        guard let mobileNumber = mobileNoTxtField.text else {
-            self.showAlertWithTitle("", message: "Please enter your mobile number", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
-            return
-        }
-        
-        guard let country = countryTxtField.text else {
-            self.showAlertWithTitle("", message: "Please select your country", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
-            return
-        }
-        
-        guard let otp = otpTxtField.text else {
-            self.showAlertWithTitle("", message: "Please eneter the recived OTP", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
-            return
-        }
-        
-        let parameters:[String : Any] = ["CountryID": 200, "Number": mobileNumber, "UserType": 100, "OTP": otp]
+        let parameters:[String : Any] = ["CountryID": 200, "Number": mobileNoTxtField.text!, "UserType": userEntityCode, "OTP": otpTxtField.text!]
+        self.showActivityIndicator()
         NetworkManager.validateOTP(parameter: parameters) { (status, response) in
-            if response?.statusCode == 1  {
-                UserDefaults.standard.set(String(format: "%@", response?.token ?? ""), forKey: Constants.accessToken)
+            self.removeActivityIndicator()
+            if response?.statusCode == APIStatusCodes.OperationSuccess  {
+                UserDefaults.standard.set(String(format: "%@", response?.token ?? ""), forKey: DefaultKeys.accessToken)
                 self.navigateToNextScreen(isexistingUser: (response?.isExistingUser ?? false)!)
                 return
             }
-            self.showAlertWithTitle("", message: response?.statusMessage ?? "Failed to verify your mobile number", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
+            self.showAlertWithTitle("", message: response?.statusMessage ?? "Failed to verify the OTP", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
         }
     }
     
@@ -122,6 +124,9 @@ extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == countryTxtField {
             self.configureTypePicker(forTextField: textField)
+        } else if textField == mobileNoTxtField {
+            self.stepsCount = 0
+            self.hideOTPFields(hide: true)
         }
         return true
     }
@@ -168,7 +173,6 @@ extension LoginViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return self.countriesInEnglish[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        requestModel.country = self.countriesInEnglish[row]
-//        requestModel.countryCode = "200"
+        countryTxtField.text = self.countriesInEnglish[row]
     }
 }

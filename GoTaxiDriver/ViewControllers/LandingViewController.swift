@@ -31,13 +31,10 @@ class LandingViewController: UIViewController {
     }
     
     @IBAction func signinBtnAction(_ sender: Any) {
-        //UserDefaults.standard.set(true, forKey: Constants.isUserLoggedIn)
         
         let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         
         self.navigationController?.pushViewController(loginVC, animated: true)
-//        let tabController = TabViewController()
-//        UIApplication.shared.keyWindow?.rootViewController = tabController
     }
     @IBAction func registerBtnAction(_ sender: Any) {
         let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegistrationViewController")

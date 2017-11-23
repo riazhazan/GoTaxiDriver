@@ -238,7 +238,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="OTP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DyL-32-tcV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the OTP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DyL-32-tcV">
                                 <rect key="frame" x="20" y="209" width="335" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="n9g-Dw-dbm"/>
@@ -256,7 +256,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="yV8-Gz-3oL"/>
                                 </constraints>
-                                <state key="normal" title="SIGN IN"/>
+                                <state key="normal" title="NEXT"/>
                                 <connections>
                                     <action selector="signInBtnAction:" destination="tgD-cd-Rgj" eventType="touchUpInside" id="bb2-en-xzt"/>
                                 </connections>
