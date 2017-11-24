@@ -455,12 +455,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zqp-oY-NFt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zqp-oY-NFt">
                                 <rect key="frame" x="0.0" y="20" width="375" height="586"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DocumentsTableCell" rowHeight="45" id="9mG-eL-RMA" customClass="DocumentsTableCell" customModule="GoTaxiDriver" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="1" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9mG-eL-RMA" id="gQG-P2-ZDA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
@@ -474,16 +474,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="stg-Dq-cPv">
-                                                    <rect key="frame" x="335" y="10.5" width="24" height="24"/>
+                                                    <rect key="frame" x="335" y="12.5" width="20" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="TPz-ZD-1c4"/>
-                                                        <constraint firstAttribute="width" constant="24" id="zEk-h2-Scy"/>
+                                                        <constraint firstAttribute="height" constant="20" id="TPz-ZD-1c4"/>
+                                                        <constraint firstAttribute="width" constant="20" id="zEk-h2-Scy"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="stg-Dq-cPv" firstAttribute="centerY" secondItem="gQG-P2-ZDA" secondAttribute="centerY" constant="0.25" id="RUh-GC-buk"/>
-                                                <constraint firstAttribute="trailing" secondItem="stg-Dq-cPv" secondAttribute="trailing" constant="16" id="chJ-gw-tOh"/>
+                                                <constraint firstAttribute="trailing" secondItem="stg-Dq-cPv" secondAttribute="trailing" constant="20" id="chJ-gw-tOh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -492,7 +492,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DocumentsHeaderCell" rowHeight="110" id="faW-CJ-55F" customClass="DocumentsHeaderCell" customModule="GoTaxiDriver" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="73" width="375" height="110"/>
+                                        <rect key="frame" x="0.0" y="46" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="faW-CJ-55F" id="ePp-Ji-xte">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
