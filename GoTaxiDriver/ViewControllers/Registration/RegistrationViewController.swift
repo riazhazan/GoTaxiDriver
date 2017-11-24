@@ -86,13 +86,16 @@ extension RegistrationViewController {
         NetworkManager.registerDriver(parameter: parameters) { (status, response) in
             self.removeActivityIndicator()
             if response?.statusCode == APIStatusCodes.OperationSuccess  {
-                UserDefaults.standard.set(true, forKey: DefaultKeys.isUserLoggedIn)
-                let tabController = TabViewController()
-                UIApplication.shared.keyWindow?.rootViewController = tabController
+                self.navigateToDocumentUploadScreen()
                 return
             }
             self.showAlertWithTitle("", message: response?.statusMessage ?? "Failed to register driver. Please try again.", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
         }
+    }
+    
+    func navigateToDocumentUploadScreen() {
+        let docsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UploadDocumentsViewController")
+        self.navigationController?.pushViewController(docsVC, animated: true)
     }
 }
 

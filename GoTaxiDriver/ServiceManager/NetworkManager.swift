@@ -14,29 +14,66 @@ class NetworkManager {
     
     class func validateNumberByRequestingOTP(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void) {
         
-        Alamofire.request(Constants.k_ServerURL + Constants.validateNumber, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.validateNumber, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
             completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
         }
     }
     
     class func validateOTP(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: ValidateOtp?) -> Void) {
         
-        Alamofire.request(Constants.k_ServerURL + Constants.validateOtp, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<ValidateOtp>) in
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.validateOtp, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<ValidateOtp>) in
             completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
         }
     }
     
     class func validateUserName(userName: String, completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: ValidateUserName?) -> Void) {
         
-        Alamofire.request(Constants.k_ServerURL + String(format: Constants.validateUserName, userName), method: HTTPMethod.post, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<ValidateUserName>) in
+        Alamofire.request(NetworkConstants.k_ServerURL + String(format: NetworkConstants.validateUserName, userName), method: HTTPMethod.post, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<ValidateUserName>) in
             completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
         }
     }
     
     class func registerDriver(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void) {
         
-        Alamofire.request(Constants.k_ServerURL + Constants.register, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.register, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
             completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+        }
+    }
+    
+    class func getDocumentList(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: DocumentList?) -> Void) {
+        
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.documentList, method: HTTPMethod.get, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseObject { (response: DataResponse<DocumentList>) in
+            completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+        }
+    }
+}
+
+extension NetworkManager {
+    class func uploadDocumentToServer(documentId: Int, selectedImage: UIImage, completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void)  {
+       
+        if let data = UIImageJPEGRepresentation(selectedImage,0.3) {
+//            let headers = [
+//                "reference": reference,
+//                "referenceid": referenceId,
+//                ]
+            
+            Alamofire.upload(
+                multipartFormData: { multipartFormData in
+                    multipartFormData.append(data, withName: "file", fileName: "file", mimeType: "image/jpeg")
+            },
+                to: NetworkConstants.k_ServerURL + String(format: NetworkConstants.uploadDocument, documentId),
+                method: .post,
+                headers: [:],
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .success(let upload, _, _):
+                        upload.responseObject { (response: DataResponse<BaseResponse>) in
+                            completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+                        }
+                    case .failure(let encodingError):
+                        debugPrint(encodingError)
+                    }
+            })
         }
     }
 }

@@ -99,7 +99,7 @@ class LoginViewController: BaseViewController {
         self.showActivityIndicator()
         NetworkManager.validateOTP(parameter: parameters) { (status, response) in
             self.removeActivityIndicator()
-            if response?.statusCode == APIStatusCodes.OperationSuccess  {
+            if response?.statusCode == APIStatusCodes.OperationSuccess {
                 UserDefaults.standard.set(String(format: "%@", response?.token ?? ""), forKey: DefaultKeys.accessToken)
                 self.navigateToNextScreen(isexistingUser: (response?.isExistingUser ?? false)!)
                 return

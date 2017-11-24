@@ -16,3 +16,15 @@
 "REGISTER" = "REGISTER";
 "SIGNIN" = "SIGN IN";
 "NEXT"  = "NEXT";
+"DOCUMENTS" = "Documents";
+"DOCS_TITLE" = "Please Upload your vehicle documents and driving licence";
+"DOCS_SUBTITLE" = "To drive with uber, your vehicle must be 1995 or newer and be a mid-size or full size sedan that comfortably seats 4-8 passengers.";
+"SIGN_OUT" = "SIGN OUT";
+
+"OK" = "OK";
+"GET_DOCS_LIST_FAILED" = "Failed to retrieve required document list.";
+"UPLOAD_DOC" = "Please upload the document by taking a picture";
+"TAKE_PHOTO" = "TAKE PHOTO";
+"DOCUMENTS_MISSING" = "Please upload all the documents before continue";
+"UPLOAD_FAILED" = "Failed to upload document. Please try again.";
+

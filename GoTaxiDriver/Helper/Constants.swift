@@ -10,6 +10,15 @@ import UIKit
 
 let userEntityCode      = 100
 
+let AppRegularFont   = "HelveticaNeue"
+let AppMediumFont    = "HelveticaNeue-Medium"
+let AppBoldFont      = "HelveticaNeue-Bold"
+
+let AppFontSmallerSize:CGFloat = 12
+let AppFontRegularSize:CGFloat = 14
+let AppFontMediumSize:CGFloat = 16
+let AppFontBigSize:CGFloat = 18
+
 struct DefaultKeys {
     
 //Userdefault key strings

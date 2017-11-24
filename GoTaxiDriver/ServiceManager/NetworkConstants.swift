@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Constants {
+struct NetworkConstants {
     
     #if DEBUG
     static let k_ServerURL     = "http://gotaxiapi.codecomb.in/api/"
@@ -21,4 +21,6 @@ struct Constants {
     static let validateOtp      = "validate/otp"
     static let validateUserName = "validate/username?Username=%@"
     static let register         = "Register"
+    static let documentList     = "document/list"
+    static let uploadDocument    = "document/upload?documentID=%d"
 }
