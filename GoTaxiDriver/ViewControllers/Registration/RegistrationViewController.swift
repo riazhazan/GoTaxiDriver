@@ -44,23 +44,18 @@ class RegistrationViewController: BaseViewController {
     @objc func signupBtnAction() {
         if !isUserNameAvailable {
             if (requestModel.userName?.isEmpty ?? true)!{
-               self.showAlertWithTitle("", message: "Please eneter a username", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
+               self.showAlertWithTitle("", message: "Please enter a username", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
                 return
             }
             self.validateuserNameAvailablilty(userName: requestModel.userName!)
             return
         }
         
-        if (requestModel.userName?.isEmpty ?? true)! || (requestModel.firstName?.isEmpty  ?? true)! || (requestModel.lastName?.isEmpty ?? true)! || (requestModel.country?.isEmpty ?? true)! || (requestModel.phone?.isEmpty ?? true)! || (requestModel.password?.isEmpty ?? true)! || (requestModel.confirmPassword?.isEmpty ?? true)! {
+        if (requestModel.userName?.isEmpty ?? true)! || (requestModel.firstName?.isEmpty  ?? true)! || (requestModel.lastName?.isEmpty ?? true)! || (requestModel.city?.isEmpty ?? true)! || (requestModel.phone?.isEmpty ?? true)! || (requestModel.password?.isEmpty ?? true)! {
             self.showAlertWithTitle("", message: "All fields are mandatory for registration. Please try again.", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
             return
         }
         
-        
-        if (requestModel.password?.characters.count ?? 0)! < 6 {
-            self.showAlertWithTitle("", message: "Password and confirm password does not match", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
-            return
-        }
         self.registerDriverInServer()
     }
 }
@@ -175,6 +170,10 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
         cell.phoneTxtField.text = requestModel.phone
         cell.passwordTxtField.tag = RegistrationFormRow.password.rawValue
         cell.passwordTxtField.text = requestModel.password
+        cell.firstNameTxtField.delegate = self
+        cell.lastNameTxtField.delegate = self
+        cell.phoneTxtField.delegate = self
+        cell.passwordTxtField.delegate = self
     }
     
     
@@ -231,8 +230,8 @@ extension RegistrationViewController: UITextFieldDelegate {
             requestModel.firstName = enteredString
         case RegistrationFormRow.lastName.rawValue:
             requestModel.lastName = enteredString
-        case RegistrationFormRow.country.rawValue:
-            requestModel.country = enteredString
+        case RegistrationFormRow.city.rawValue:
+            requestModel.city = enteredString
         case RegistrationFormRow.phoneNumber.rawValue:
             requestModel.phone = enteredString
         case RegistrationFormRow.password.rawValue:
@@ -242,7 +241,6 @@ extension RegistrationViewController: UITextFieldDelegate {
             break
         }
         
-
         if enteredString.characters.count > 50 {
                 return false
             }

@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tabController = TabViewController()
             self.window?.rootViewController = tabController
         }
+        configureNavigationBar()
         self.window!.makeKeyAndVisible()
         return true
     }
@@ -108,3 +109,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    func configureNavigationBar() {
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        UINavigationBar.appearance().backgroundColor = UIColor.black
+        UIBarButtonItem.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+    }
+}

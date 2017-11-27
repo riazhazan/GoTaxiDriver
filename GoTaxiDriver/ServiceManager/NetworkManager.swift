@@ -52,14 +52,10 @@ extension NetworkManager {
     class func uploadDocumentToServer(documentId: Int, selectedImage: UIImage, completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void)  {
        
         if let data = UIImageJPEGRepresentation(selectedImage,0.3) {
-//            let headers = [
-//                "reference": reference,
-//                "referenceid": referenceId,
-//                ]
-            
+
             Alamofire.upload(
                 multipartFormData: { multipartFormData in
-                    multipartFormData.append(data, withName: "file", fileName: "file", mimeType: "image/jpeg")
+                    multipartFormData.append(data, withName: "fieldNameHere", fileName: "file", mimeType: "image/jpeg")
             },
                 to: NetworkConstants.k_ServerURL + String(format: NetworkConstants.uploadDocument, documentId),
                 method: .post,

@@ -35,6 +35,9 @@
 		0440F25A1FC72E9100DF7AE1 /* DocumentsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440F2591FC72E8D00DF7AE1 /* DocumentsTableCell.swift */; };
 		0448D9641FC7395E003AF738 /* DocumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D9631FC7395E003AF738 /* DocumentList.swift */; };
 		0448D9681FC748BF003AF738 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D9671FC748BF003AF738 /* UploadViewController.swift */; };
+		045FA96E1FCC250200F2A9A3 /* TripvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FA96D1FCC250200F2A9A3 /* TripvViewController.swift */; };
+		045FA9701FCC251B00F2A9A3 /* TripRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FA96F1FCC251B00F2A9A3 /* TripRequestViewController.swift */; };
+		045FA97B1FCC9EC600F2A9A3 /* OnATripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FA97A1FCC9EC600F2A9A3 /* OnATripViewController.swift */; };
 		04B3F0A41FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3F0A31FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift */; };
 		04BD3E161FC69F270078A776 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E151FC69F270078A776 /* StringExtension.swift */; };
 		04BD3E171FC69F270078A776 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E151FC69F270078A776 /* StringExtension.swift */; };
@@ -121,6 +124,9 @@
 		0440F2591FC72E8D00DF7AE1 /* DocumentsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableCell.swift; sourceTree = "<group>"; };
 		0448D9631FC7395E003AF738 /* DocumentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentList.swift; sourceTree = "<group>"; };
 		0448D9671FC748BF003AF738 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		045FA96D1FCC250200F2A9A3 /* TripvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripvViewController.swift; sourceTree = "<group>"; };
+		045FA96F1FCC251B00F2A9A3 /* TripRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestViewController.swift; sourceTree = "<group>"; };
+		045FA97A1FCC9EC600F2A9A3 /* OnATripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnATripViewController.swift; sourceTree = "<group>"; };
 		04B3F0A31FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeaderCellTableViewCell.swift; sourceTree = "<group>"; };
 		04BD3E151FC69F270078A776 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		04BD3E4D1FC6A0580078A776 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +256,7 @@
 				042AA7851FC687D7000BE630 /* LandingViewController.swift */,
 				042AA7891FC687D7000BE630 /* LoginViewController.swift */,
 				042AA7871FC687D7000BE630 /* RatingsViewController.swift */,
+				045FA96C1FCC24C900F2A9A3 /* Trip */,
 				04BD3E4C1FC6A0580078A776 /* BaseViewController */,
 				042AA7821FC687D7000BE630 /* Registration */,
 				0440F2561FC7240300DF7AE1 /* UploadDocs */,
@@ -318,6 +325,16 @@
 				04367B781FC7CAD8004C6E52 /* PreviewViewController.swift */,
 			);
 			path = UploadDocs;
+			sourceTree = "<group>";
+		};
+		045FA96C1FCC24C900F2A9A3 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				045FA96D1FCC250200F2A9A3 /* TripvViewController.swift */,
+				045FA96F1FCC251B00F2A9A3 /* TripRequestViewController.swift */,
+				045FA97A1FCC9EC600F2A9A3 /* OnATripViewController.swift */,
+			);
+			path = Trip;
 			sourceTree = "<group>";
 		};
 		04BD3E4C1FC6A0580078A776 /* BaseViewController */ = {
@@ -676,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BD3E551FC6BFA80078A776 /* NetworkManager.swift in Sources */,
+				045FA9701FCC251B00F2A9A3 /* TripRequestViewController.swift in Sources */,
 				04BD3E6C1FC6ECB60078A776 /* UITextFieldExtension.swift in Sources */,
 				042AA7921FC687D8000BE630 /* LoginViewController.swift in Sources */,
 				042AA78A1FC687D8000BE630 /* TabViewController.swift in Sources */,
@@ -684,7 +702,9 @@
 				042AA77F1FC687C8000BE630 /* Constants.swift in Sources */,
 				0448D9681FC748BF003AF738 /* UploadViewController.swift in Sources */,
 				04BD3E621FC6CDD70078A776 /* ValidateOtp.swift in Sources */,
+				045FA96E1FCC250200F2A9A3 /* TripvViewController.swift in Sources */,
 				04BD3E161FC69F270078A776 /* StringExtension.swift in Sources */,
+				045FA97B1FCC9EC600F2A9A3 /* OnATripViewController.swift in Sources */,
 				04BD3E661FC6CF3E0078A776 /* UIViewControllerExtension.swift in Sources */,
 				04367B771FC7CA58004C6E52 /* CameraViewController.swift in Sources */,
 				04BD3E521FC6B5BD0078A776 /* UIColorExtension.swift in Sources */,

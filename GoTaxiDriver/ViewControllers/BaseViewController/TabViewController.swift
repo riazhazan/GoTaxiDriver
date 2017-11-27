@@ -13,28 +13,20 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBarController()
-        //configureTab()
+        configureNavigationBar()
     }
 
+    func configureNavigationBar() {
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        UINavigationBar.appearance().backgroundColor = UIColor.black
+        UIBarButtonItem.appearance().tintColor = UIColor.white
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    func configureTab() {
-        
-        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
-        homeVC.title = "HOME"
-        
-        let earningsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EarningsViewController")
-        earningsVC.title = "EARNINGS"
-        
-        let ratingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RatingsViewController")
-        ratingVC.title = "RATINGS"
-        
-        let accountVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AccountViewController")
-        accountVC.title = "ACCOUNT"
-        self.viewControllers = [homeVC, earningsVC, ratingVC, accountVC]
     }
     
     func configureTabBarController() {
@@ -78,22 +70,23 @@ class TabViewController: UITabBarController {
         tabHome.title = "Home" // tabbar title
         tabHome.image = UIImage(named: "home")//?.withRenderingMode(.alwaysOriginal) // deselect image
         //tabHome.selectedImage = UIImage(named: "icon_home.png")?.withRenderingMode(.alwaysOriginal) // select image
-        tabHome.titlePositionAdjustment.vertical = tabHome.titlePositionAdjustment.vertical-2 // title position change
+        tabHome.titlePositionAdjustment.vertical = tabHome.titlePositionAdjustment.vertical-3 // title position change
         
         let tabEarning = tabbar.items![1]
         tabEarning.title = "Earnings"
         tabEarning.image = UIImage(named: "earnings")
-        tabEarning.titlePositionAdjustment.vertical = tabHome.titlePositionAdjustment.vertical-2
+        tabEarning.titlePositionAdjustment.vertical = tabEarning.titlePositionAdjustment.vertical-3
+    
        
         let tabRating = tabbar.items![2]
         tabRating.title = "Ratings"
         tabRating.image = UIImage(named: "ratings")
-        tabRating.titlePositionAdjustment.vertical = tabRating.titlePositionAdjustment.vertical-2
+        tabRating.titlePositionAdjustment.vertical = tabRating.titlePositionAdjustment.vertical-3
         
         let tabAccount = tabbar.items![3]
         tabAccount.title = "Account"
         tabAccount.image = UIImage(named: "account")
-        tabAccount.titlePositionAdjustment.vertical = tabAccount.titlePositionAdjustment.vertical-2
+        tabAccount.titlePositionAdjustment.vertical = tabAccount.titlePositionAdjustment.vertical-3
 
     }
     
