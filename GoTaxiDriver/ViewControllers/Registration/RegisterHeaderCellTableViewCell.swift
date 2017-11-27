@@ -11,13 +11,13 @@ import UIKit
 class RegisterHeaderCellTableViewCell: UITableViewCell, UIPageViewControllerDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    var colors:[UIColor] = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow]
     var controllerFrame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     @IBOutlet weak var pageControl: UIPageControl!
-
+    var icon:[String] = ["", "", ""]
+    var header:[String] = ["Make as much as you want", "Set your own schedule", "Safety behind the wheel"];
+    var subHeader:[String] = ["You decide how many hours you want to work", "Set your own schedule", "GoTaxi is dedicated to keeping people safe on the road."]
     override func awakeFromNib() {
         super.awakeFromNib()
-        //configurePageControl()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,25 +33,27 @@ class RegisterHeaderCellTableViewCell: UITableViewCell, UIPageViewControllerDele
     }
     func configurePageControl(withWidth:CGFloat) {
 
-        self.pageControl.numberOfPages = colors.count
+        self.pageControl.numberOfPages = 3
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.red
-        self.pageControl.pageIndicatorTintColor = UIColor.black
-        self.pageControl.currentPageIndicatorTintColor = UIColor.green
+        self.pageControl.pageIndicatorTintColor = UIColor.lightGray
+        self.pageControl.currentPageIndicatorTintColor = UIColor.black
 
-        
         scrollView.delegate = self as? UIScrollViewDelegate
-        for index in 0..<4 {
+        for index in 0..<3 {
             
             controllerFrame.origin.x = controllerFrame.size.width * CGFloat(index)
             controllerFrame.size.height = self.scrollView.frame.height
             controllerFrame.size.width =  controllerFrame.size.width
-            let subView = UIView(frame: controllerFrame)
-            subView.backgroundColor = colors[index]
-            self.scrollView .addSubview(subView)
+            let headerView = HeaderView(frame: controllerFrame)
+            headerView.backgroundColor = UIColor.white
+            headerView.icon?.backgroundColor = UIColor.lightGray
+            headerView.headerLbl?.text = header[index]
+            headerView.subHeaderLbl?.text = subHeader[index]
+            self.scrollView .addSubview(headerView)
         }
         self.scrollView.isPagingEnabled = true
-        self.scrollView.contentSize = CGSize(width: self.bounds.width * 4, height: self.scrollView.frame.size.height)
+        self.scrollView.contentSize = CGSize(width: self.bounds.width * 3, height: self.scrollView.frame.size.height)
         pageControl.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControlEvents.valueChanged)
 
     }
@@ -65,19 +67,33 @@ class RegisterHeaderCellTableViewCell: UITableViewCell, UIPageViewControllerDele
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         pageControl.currentPage = Int(pageNumber)
     }
-
-    
-//    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-//        <#code#>
-//    }
-//
-//    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-//        <#code#>
-//    }
-//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-//        return 3
-//    }
-//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-//        return 0
-//    }
 }
+
+class HeaderView:UIView {
+    var icon:UIImageView?
+    var headerLbl:UILabel?
+    var subHeaderLbl:UILabel?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        icon = UIImageView()
+        icon?.frame = CGRect(x: self.center.x - 35, y: 10, width: 70, height: 70)
+        icon?.backgroundColor = UIColor.gray
+        headerLbl = UILabel()
+        headerLbl?.frame = CGRect(x: 20, y: 80, width: self.frame.size.width - 40, height: 40)
+        subHeaderLbl = UILabel()
+        subHeaderLbl?.frame = CGRect(x: 20, y: 120, width: self.frame.size.width - 40, height: 30)
+        headerLbl?.textAlignment = NSTextAlignment.center
+        subHeaderLbl?.textAlignment = NSTextAlignment.center
+        headerLbl?.font = UIFont(name: AppRegularFont, size: AppFontBigSize)!
+        subHeaderLbl?.font = UIFont(name: AppRegularFont, size: AppFontRegularSize)!
+        self.addSubview(icon!)
+        self.addSubview(headerLbl!)
+        self.addSubview(subHeaderLbl!)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+

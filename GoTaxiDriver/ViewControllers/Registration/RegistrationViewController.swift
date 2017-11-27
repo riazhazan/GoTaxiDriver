@@ -192,7 +192,6 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RegisterHeaderCellTableViewCell") as? RegisterHeaderCellTableViewCell
-       cell?.configurePageControl(withWidth: (cell?.frame.size.width)!)
         cell?.layoutIfNeeded()
         
         cell?.contentView.bringSubview(toFront:(cell?.pageControl)!)
@@ -200,7 +199,7 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 170
+        return 230
     }
     
     
