@@ -6,8 +6,8 @@ target 'GoTaxiDriver' do
   use_frameworks!
 
   # Pods for GoTaxiDriver
-    pod 'AlamofireObjectMapper'
-  	#pod 'Alamofire', '~> 4.5.1’
+    pod 'AlamofireObjectMapper', '5.0.0'
+  	pod 'GoogleMaps', '2.5.0'
     pod 'IQKeyboardManagerSwift', '5.0.0'
 
   target 'GoTaxiDriverTests' do

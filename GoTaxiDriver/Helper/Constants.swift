@@ -8,6 +8,8 @@
 
 import UIKit
 
+let GoogleMapAPIKey =  "AIzaSyCUiX7AjXx26yd2_D8A_uyvPSPZHLXETWk"
+
 let userEntityCode      = 100
 
 let AppRegularFont   = "HelveticaNeue"

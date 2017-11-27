@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
 
     var goTaxiBlueColor: UIColor {
-        return  UIColor(red: 44/255, green: 163/255, blue: 255/255, alpha: 1.0)
+        return  UIColor(red: 0/255, green: 143/255, blue: 255/255, alpha: 1.0)
     }
     var textFieldBorderColor: UIColor {
         return  UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0)

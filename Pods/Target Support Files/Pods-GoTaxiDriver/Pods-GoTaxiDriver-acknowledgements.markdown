@@ -50,6 +50,10 @@ SOFTWARE.
 
 
 
+## GoogleMaps
+
+Copyright 2017 Google
+
 ## IQKeyboardManagerSwift
 
 IQKeyboardManager license

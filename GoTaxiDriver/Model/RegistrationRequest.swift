@@ -14,8 +14,10 @@ class RegistrationRequest {
     var firstName: String?
     var lastName: String?
     var country:String?
+    var city:String?
     var countryCode:Int?
     var phone: String?
+    var inviteCode: String?
     var password: String?
     var confirmPassword:String?
     

@@ -11,12 +11,13 @@ import UIKit
 enum RegistrationFormRow: Int {
     case userName = 0
     case firstName
+    case city
+    case inviteCode
+    case registerButton
     case lastName
-    case country
     case phoneNumber
     case password
-    case confirmPassword
-    case registerButton
+    case country
 }
 
 class RegistrationViewController: BaseViewController {
@@ -56,7 +57,7 @@ class RegistrationViewController: BaseViewController {
         }
         
         
-        if requestModel.password  != requestModel.confirmPassword {
+        if (requestModel.password?.characters.count ?? 0)! < 6 {
             self.showAlertWithTitle("", message: "Password and confirm password does not match", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
             return
         }
@@ -107,11 +108,18 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return  isUserNameAvailable ? 8 : 2
+        return  isUserNameAvailable ? 5 : 2
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        if !isUserNameAvailable {
+            return 50
+        }
+        
+        if indexPath.row == 1 {
+         return 150
+        }
         return 50
     }
     
@@ -121,52 +129,54 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
             if indexPath.row == 1 {
                 return configureRegisterBtnCell(tableView, indexPath: indexPath)
             } else {
-                return configureBasicProfileDetailCell(tableView, indexPath: indexPath)
+                return configureRegistrationDetailsCell(tableView, indexPath: indexPath)
             }
         } else {
             if indexPath.row == RegistrationFormRow.registerButton.rawValue {
                 return configureRegisterBtnCell(tableView, indexPath: indexPath)
             } else {
-                return configureBasicProfileDetailCell(tableView, indexPath: indexPath)
+                return configureRegistrationDetailsCell(tableView, indexPath: indexPath)
             }
         }
-        
-        
-        
+
     }
-    func configureBasicProfileDetailCell(_ tableView:UITableView, indexPath: IndexPath) -> RegistrationTableCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RegistrationTableCell", for: indexPath) as! RegistrationTableCell
-        cell.inputTxtField.tag = indexPath.row
-        cell.inputTxtField.delegate = self
-        cell.inputTxtField.attributedPlaceholder = setPlaceHolderString(placeholderStr: registartionPlaceholders[indexPath.row])
-        cell.inputTxtField.text = ""
-        cell.inputTxtField.keyboardType = .default
-        cell.inputTxtField.isSecureTextEntry = false
+    func configureRegistrationDetailsCell(_ tableView:UITableView, indexPath: IndexPath) -> UITableViewCell{
         
-        switch indexPath.row {
-        case RegistrationFormRow.userName.rawValue:
+        if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicDetailsTableCell", for: indexPath) as! BasicDetailsTableCell
+            self.configureBasicDetailsCell(cell: cell, indexPath: indexPath)
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RegistrationTableCell", for: indexPath) as! RegistrationTableCell
+        cell.inputTxtField.delegate = self
+        cell.inputTxtField.text = ""
+        
+        if indexPath.row == 0 {
+            cell.inputTxtField.tag = RegistrationFormRow.userName.rawValue
             cell.inputTxtField.becomeFirstResponder()
             cell.inputTxtField.text = requestModel.userName
-        case RegistrationFormRow.firstName.rawValue:
-            cell.inputTxtField.text = requestModel.firstName
-        case RegistrationFormRow.lastName.rawValue:
-            cell.inputTxtField.text = requestModel.lastName
-        case RegistrationFormRow.country.rawValue:
-            cell.inputTxtField.text = requestModel.country
-        case RegistrationFormRow.phoneNumber.rawValue:
-            cell.inputTxtField.keyboardType = .phonePad
-            cell.inputTxtField.text = requestModel.phone
-        case RegistrationFormRow.password.rawValue:
-            cell.inputTxtField.isSecureTextEntry = true
-            cell.inputTxtField.text = requestModel.password
-        case RegistrationFormRow.confirmPassword.rawValue:
-            cell.inputTxtField.isSecureTextEntry = true
-            cell.inputTxtField.text = requestModel.confirmPassword
-        default:
-            break
+        } else if indexPath.row == 2 {
+            cell.inputTxtField.tag = RegistrationFormRow.city.rawValue
+            cell.inputTxtField.text = requestModel.city
+        } else if indexPath.row == 3 {
+            cell.inputTxtField.tag = RegistrationFormRow.inviteCode.rawValue
+            cell.inputTxtField.text = requestModel.inviteCode
         }
         return cell
     }
+    
+    func configureBasicDetailsCell(cell: BasicDetailsTableCell, indexPath: IndexPath) {
+        cell.firstNameTxtField.tag = RegistrationFormRow.firstName.rawValue
+        cell.firstNameTxtField.text = requestModel.firstName
+        cell.lastNameTxtField.tag = RegistrationFormRow.lastName.rawValue
+        cell.lastNameTxtField.text = requestModel.lastName
+        cell.phoneTxtField.tag = RegistrationFormRow.phoneNumber.rawValue
+        cell.phoneTxtField.text = requestModel.phone
+        cell.passwordTxtField.tag = RegistrationFormRow.password.rawValue
+        cell.passwordTxtField.text = requestModel.password
+    }
+    
     
     func configureRegisterBtnCell(_ tableView:UITableView, indexPath: IndexPath) -> ActionButtonTableCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActionButtonTableCell", for: indexPath) as! ActionButtonTableCell
@@ -177,9 +187,22 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
             cell.actionBtn.setTitle(NSLocalizedString("NEXT", comment: ""), for: .normal)
         }
         
-        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RegisterHeaderCellTableViewCell") as? RegisterHeaderCellTableViewCell
+       cell?.configurePageControl(withWidth: (cell?.frame.size.width)!)
+        cell?.layoutIfNeeded()
+        
+        cell?.contentView.bringSubview(toFront:(cell?.pageControl)!)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 170
+    }
+    
     
     func configureTypePicker(forTextField: UITextField) {
         self.countryPicker = UIPickerView()
@@ -215,8 +238,6 @@ extension RegistrationViewController: UITextFieldDelegate {
             requestModel.phone = enteredString
         case RegistrationFormRow.password.rawValue:
             requestModel.password = enteredString
-        case RegistrationFormRow.confirmPassword.rawValue:
-            requestModel.confirmPassword = enteredString
             
         default:
             break
@@ -234,9 +255,6 @@ extension RegistrationViewController: UITextFieldDelegate {
         if textField.tag == RegistrationFormRow.country.rawValue {
             self.registrationTableView.reloadRows(at: [IndexPath(row: textField.tag, section: 0)], with: UITableViewRowAnimation.automatic)
         }
-//        if textField.tag == RegistrationFormRow.userName.rawValue && !(textField.text?.isEmpty ?? true)! {
-//            self.validateuserNameAvailablilty(userName: requestModel.userName ?? "")
-//        }
     }
 }
 

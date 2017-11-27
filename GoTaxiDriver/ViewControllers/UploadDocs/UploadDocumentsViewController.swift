@@ -15,6 +15,7 @@ class UploadDocumentsViewController: BaseViewController {
     var docsDataSource: DocumentList?
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(true, forKey: DefaultKeys.isUserLoggedIn)
         configureNavBar()
         self.docsTableView.tableFooterView = UIView()
         self.title = NSLocalizedString("DOCUMENTS", comment: "")

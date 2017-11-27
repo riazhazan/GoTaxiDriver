@@ -35,6 +35,7 @@
 		0440F25A1FC72E9100DF7AE1 /* DocumentsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440F2591FC72E8D00DF7AE1 /* DocumentsTableCell.swift */; };
 		0448D9641FC7395E003AF738 /* DocumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D9631FC7395E003AF738 /* DocumentList.swift */; };
 		0448D9681FC748BF003AF738 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D9671FC748BF003AF738 /* UploadViewController.swift */; };
+		04B3F0A41FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3F0A31FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift */; };
 		04BD3E161FC69F270078A776 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E151FC69F270078A776 /* StringExtension.swift */; };
 		04BD3E171FC69F270078A776 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E151FC69F270078A776 /* StringExtension.swift */; };
 		04BD3E181FC69F270078A776 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E151FC69F270078A776 /* StringExtension.swift */; };
@@ -60,6 +61,8 @@
 		04BD3E691FC6EC300078A776 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7801FC687D7000BE630 /* TabViewController.swift */; };
 		04BD3E6A1FC6EC300078A776 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7801FC687D7000BE630 /* TabViewController.swift */; };
 		04BD3E6C1FC6ECB60078A776 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD3E6B1FC6ECB60078A776 /* UITextFieldExtension.swift */; };
+		04D9B9931FC84945005A038C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9B9921FC84945005A038C /* LocationService.swift */; };
+		04D9B9951FC84C22005A038C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D9B9941FC84C22005A038C /* CoreLocation.framework */; };
 		04EC832F1FC8171B0097F264 /* SharedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC832E1FC8171B0097F264 /* SharedObjects.swift */; };
 		24F81A8E60FA1D20FE899F93 /* Pods_GoTaxiDriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA534E9B9DA7EC8C5D38DE81 /* Pods_GoTaxiDriverTests.framework */; };
 		4290899B4A7515B138DCFEE4 /* Pods_GoTaxiDriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5593E4769A9317F522F6FC8 /* Pods_GoTaxiDriverUITests.framework */; };
@@ -118,6 +121,7 @@
 		0440F2591FC72E8D00DF7AE1 /* DocumentsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableCell.swift; sourceTree = "<group>"; };
 		0448D9631FC7395E003AF738 /* DocumentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentList.swift; sourceTree = "<group>"; };
 		0448D9671FC748BF003AF738 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		04B3F0A31FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeaderCellTableViewCell.swift; sourceTree = "<group>"; };
 		04BD3E151FC69F270078A776 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		04BD3E4D1FC6A0580078A776 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04BD3E511FC6B5BD0078A776 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		04BD3E611FC6CDD70078A776 /* ValidateOtp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateOtp.swift; sourceTree = "<group>"; };
 		04BD3E651FC6CF3E0078A776 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		04BD3E6B1FC6ECB60078A776 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		04D9B9921FC84945005A038C /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		04D9B9941FC84C22005A038C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		04EC832E1FC8171B0097F264 /* SharedObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedObjects.swift; sourceTree = "<group>"; };
 		22FDD22298AD8E962AB8B6B0 /* Pods-GoTaxiDriver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoTaxiDriver.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoTaxiDriver/Pods-GoTaxiDriver.release.xcconfig"; sourceTree = "<group>"; };
 		7977A3869A0C4E468DB78005 /* Pods-GoTaxiDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoTaxiDriver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoTaxiDriver/Pods-GoTaxiDriver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D9B9951FC84C22005A038C /* CoreLocation.framework in Frameworks */,
 				C55CDD36C22CD3E51622BE39 /* Pods_GoTaxiDriver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +285,7 @@
 			children = (
 				042AA77D1FC687C8000BE630 /* Constants.swift */,
 				04EC832E1FC8171B0097F264 /* SharedObjects.swift */,
+				04D9B9921FC84945005A038C /* LocationService.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				042AA7831FC687D7000BE630 /* RegistrationTableCell.swift */,
+				04B3F0A31FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift */,
 				042AA7841FC687D7000BE630 /* RegistrationViewController.swift */,
 			);
 			path = Registration;
@@ -355,6 +364,7 @@
 		9A0D60EEB38DA460207D8260 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04D9B9941FC84C22005A038C /* CoreLocation.framework */,
 				87E0CD5F421D14F5B184D283 /* Pods_GoTaxiDriver.framework */,
 				FA534E9B9DA7EC8C5D38DE81 /* Pods_GoTaxiDriverTests.framework */,
 				C5593E4769A9317F522F6FC8 /* Pods_GoTaxiDriverUITests.framework */,
@@ -508,9 +518,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoTaxiDriver/Pods-GoTaxiDriver-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -681,6 +694,7 @@
 				042AA78D1FC687D8000BE630 /* RegistrationViewController.swift in Sources */,
 				042AA78B1FC687D8000BE630 /* AccountViewController.swift in Sources */,
 				04BD3E4E1FC6A0580078A776 /* BaseViewController.swift in Sources */,
+				04B3F0A41FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift in Sources */,
 				042AA7911FC687D8000BE630 /* EarningsViewController.swift in Sources */,
 				042AA7901FC687D8000BE630 /* RatingsViewController.swift in Sources */,
 				0440F2581FC7244700DF7AE1 /* UploadDocumentsViewController.swift in Sources */,
@@ -690,6 +704,7 @@
 				04367B791FC7CAD8004C6E52 /* PreviewViewController.swift in Sources */,
 				042AA78F1FC687D8000BE630 /* HomeViewController.swift in Sources */,
 				04BD3E5A1FC6C1540078A776 /* BaseResponse.swift in Sources */,
+				04D9B9931FC84945005A038C /* LocationService.swift in Sources */,
 				042AA7491FC686EB000BE630 /* ViewController.swift in Sources */,
 				042AA7941FC68855000BE630 /* RegistrationRequest.swift in Sources */,
 				042AA78E1FC687D8000BE630 /* LandingViewController.swift in Sources */,
