@@ -43,10 +43,10 @@ extension OnATripViewController {
         NetworkManager.completeRide(parameter: parameter) { (status, response) in
             self.removeActivityIndicator()
             if response?.statusCode == APIStatusCodes.OperationSuccess {
-            self.showAlertWithTitle("", message: "You have completed your ride.", OKButtonTitle: "OK", OKcompletion: {
-                self.navigationController?.popToRootViewController(animated: true)
-            }, cancelButtonTitle: nil, cancelCompletion: nil)
-            
+             
+                self.showAlertWithTitle("Go Taxi", message: "You have completed your ride.", OKButtonTitle: "OK", OKcompletion: { (action) in
+                    self.navigationController?.popToRootViewController(animated: true)
+                }, cancelButtonTitle: nil, cancelCompletion: nil)
             }
         }
     }
