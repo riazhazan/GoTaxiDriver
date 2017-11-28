@@ -46,6 +46,55 @@ class NetworkManager {
             completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
         }
     }
+    
+    class func syncCurrentLocation(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void) {
+        
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.syncLocation, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
+            completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+        }
+    }
+    
+    class func approveARide(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void) {
+        
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.approveRide, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
+            completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+        }
+    }
+    
+    class func declineARide(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void) {
+        
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.declineRide, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
+            completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+        }
+    }
+    
+    class func confirmReachedRiderLocation(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void) {
+        
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.confirmReached, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
+            completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+        }
+    }
+    
+    class func startRide(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void) {
+        
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.rideStart, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
+            completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+        }
+    }
+    
+    class func stopTheRide(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: StopRide?) -> Void) {
+        
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.rideStop, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<StopRide>) in
+            completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+        }
+    }
+    
+    class func completeRide(parameter: [String: Any], completionHandler: @escaping (_ status: APIErrorStatus, _ responseObject: BaseResponse?) -> Void) {
+        
+        Alamofire.request(NetworkConstants.k_ServerURL + NetworkConstants.rideComplete, method: HTTPMethod.post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject { (response: DataResponse<BaseResponse>) in
+            completionHandler(self.getErrorStatusForHTTPResponse(response.response), response.result.value)
+        }
+    }
 }
 
 extension NetworkManager {

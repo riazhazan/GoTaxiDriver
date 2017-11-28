@@ -13,7 +13,7 @@ public class LocationService: NSObject, CLLocationManagerDelegate{
     
     public static var sharedInstance = LocationService()
     let locationManager: CLLocationManager
-    
+    var updateLocationDelegate: UpdateLocationDelegate?
     override init() {
         locationManager = CLLocationManager()
         
@@ -31,8 +31,14 @@ public class LocationService: NSObject, CLLocationManagerDelegate{
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let newLocation = locations.last{
             print("(\(newLocation.coordinate.latitude), \(newLocation.coordinate.latitude))")
+            updateLocationDelegate?.didUpdateLocation(location: newLocation)
         }
     }
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     }
+}
+
+
+protocol UpdateLocationDelegate {
+    func didUpdateLocation(location: CLLocation)
 }

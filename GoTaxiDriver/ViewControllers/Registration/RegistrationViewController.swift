@@ -154,9 +154,11 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
         } else if indexPath.row == 2 {
             cell.inputTxtField.tag = RegistrationFormRow.city.rawValue
             cell.inputTxtField.text = requestModel.city
+            cell.inputTxtField.placeholder = "City"
         } else if indexPath.row == 3 {
             cell.inputTxtField.tag = RegistrationFormRow.inviteCode.rawValue
             cell.inputTxtField.text = requestModel.inviteCode
+            cell.inputTxtField.placeholder = "Invite code (optional)"
         }
         return cell
     }

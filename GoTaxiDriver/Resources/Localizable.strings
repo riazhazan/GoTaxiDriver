@@ -27,4 +27,6 @@
 "TAKE_PHOTO" = "TAKE PHOTO";
 "DOCUMENTS_MISSING" = "Please upload all the documents before continue";
 "UPLOAD_FAILED" = "Failed to upload document. Please try again.";
+"COLLECT_CASH" = "COLLECT CASH";
+"AMOUNT_DUE" = "AMOUNT DUE";
 

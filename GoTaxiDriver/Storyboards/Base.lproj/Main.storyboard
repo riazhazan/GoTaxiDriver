@@ -638,6 +638,62 @@ California Hot Springs, CA, California, 93207
             </objects>
             <point key="canvasLocation" x="3482.4000000000001" y="754.27286356821594"/>
         </scene>
+        <!--Collect Cash View Controller-->
+        <scene sceneID="ebq-fK-NfM">
+            <objects>
+                <viewController storyboardIdentifier="CollectCashViewController" id="2uI-3O-Xwu" customClass="CollectCashViewController" customModule="GoTaxiDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g9B-5n-Gpa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMOUNT DUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TS-QN-rTP">
+                                <rect key="frame" x="137.5" y="284.5" width="101" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="$4000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q8-sD-Kbg">
+                                <rect key="frame" x="131.5" y="306.5" width="111.5" height="54"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIf-M7-clr">
+                                <rect key="frame" x="20" y="602" width="335" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="H4Y-Ge-Vrb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="DONE"/>
+                                <connections>
+                                    <action selector="doneBtnAction:" destination="2uI-3O-Xwu" eventType="touchUpInside" id="s9k-w0-QE2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.5450980392" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y2B-hh-l0p" firstAttribute="trailing" secondItem="TIf-M7-clr" secondAttribute="trailing" constant="20" id="6LM-0B-hZx"/>
+                            <constraint firstItem="TIf-M7-clr" firstAttribute="leading" secondItem="Y2B-hh-l0p" secondAttribute="leading" constant="20" id="GCY-Zk-eu1"/>
+                            <constraint firstItem="8TS-QN-rTP" firstAttribute="centerY" secondItem="g9B-5n-Gpa" secondAttribute="centerY" constant="-40" id="Ph7-wV-5za"/>
+                            <constraint firstItem="7Q8-sD-Kbg" firstAttribute="top" secondItem="8TS-QN-rTP" secondAttribute="bottom" constant="4" id="VrK-m4-xMK"/>
+                            <constraint firstItem="8TS-QN-rTP" firstAttribute="centerX" secondItem="g9B-5n-Gpa" secondAttribute="centerX" id="X4z-cA-pBJ"/>
+                            <constraint firstItem="7Q8-sD-Kbg" firstAttribute="centerY" secondItem="g9B-5n-Gpa" secondAttribute="centerY" id="bDB-PS-mEH"/>
+                            <constraint firstItem="7Q8-sD-Kbg" firstAttribute="centerX" secondItem="g9B-5n-Gpa" secondAttribute="centerX" id="iyz-tz-ALy"/>
+                            <constraint firstItem="Y2B-hh-l0p" firstAttribute="bottom" secondItem="TIf-M7-clr" secondAttribute="bottom" constant="20" id="qxq-Du-CCN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y2B-hh-l0p"/>
+                    </view>
+                    <connections>
+                        <outlet property="TitleLbl" destination="8TS-QN-rTP" id="tka-HL-7f7"/>
+                        <outlet property="amountLbl" destination="7Q8-sD-Kbg" id="6k1-xg-UeZ"/>
+                        <outlet property="doneBtn" destination="TIf-M7-clr" id="whV-Dx-7nw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ean-Lx-P1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4120.8000000000002" y="752.47376311844084"/>
+        </scene>
         <!--Landing View Controller-->
         <scene sceneID="2ni-be-Zbc">
             <objects>

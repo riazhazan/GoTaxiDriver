@@ -26,25 +26,50 @@ class TripRequestViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        configureUI()
+    }
+    
+    func configureUI() {
         mapView.clipsToBounds = true
         mapBgView.layer.cornerRadius = mapBgView.layer.frame.width/2
         mapView.layer.cornerRadius = mapView.layer.frame.width / 2
     }
-    func configureUI() {
-        
-        
-    }
     
     @IBAction func cancelbtnAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.cancelARide(rideId: 1)
     }
     
     @IBAction func acceptBtnAction(_ sender: Any) {
-        let tripVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TripvViewController") as! TripvViewController
-        self.navigationController?.pushViewController(tripVC, animated: true)
+        self.acceptRideWithId(rideId: 1)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension TripRequestViewController {
+    func acceptRideWithId(rideId: Int) {
+        self.showActivityIndicator()
+        let parameter: [String : Any] = ["RideID": rideId, "IsApproved": true, "Latitude": 3.1, "Longitude": 2.1]
+        NetworkManager.approveARide(parameter: parameter) { (status, response) in
+            if response?.statusCode == APIStatusCodes.OperationSuccess {
+                self.removeActivityIndicator()
+                let tripVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TripvViewController") as! TripvViewController
+                self.navigationController?.pushViewController(tripVC, animated: true)
+            }
+            
+        }
+    }
+    
+    func cancelARide(rideId: Int) {
+        self.showActivityIndicator()
+        let parameter: [String : Any] = ["RideID": rideId, "IsApproved": false, "Latitude": 3.1, "Longitude": 2.1]
+        NetworkManager.approveARide(parameter: parameter) { (status, response) in
+            self.removeActivityIndicator()
+            if response?.statusCode == APIStatusCodes.OperationSuccess {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
 }

@@ -22,5 +22,13 @@ struct NetworkConstants {
     static let validateUserName = "validate/username?Username=%@"
     static let register         = "Register"
     static let documentList     = "document/list"
-    static let uploadDocument    = "document/upload?documentID=%d"
+    static let uploadDocument   = "document/upload?documentID=%d"
+    
+    static let approveRide      = "ride/approve"
+    static let declineRide      = "ride/cancel"
+    static let confirmReached   = "ride/confirmreached"
+    static let rideStart        = "ride/start"
+    static let rideStop         = "ride/stop"
+    static let rideComplete     = "ride/complete"
+    static let syncLocation     = "location/sync"
 }

@@ -21,6 +21,8 @@ class TripvViewController: UIViewController {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var pickupTitleLbl: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
+    
+    var rideId: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -31,23 +33,51 @@ class TripvViewController: UIViewController {
     }
     
     func configureUI() {
+        self.startTripBtn.isEnabled = false
         riderNotifiedInfoView.isHidden = true
     }
     
     @IBAction func startTripBtnAction(_ sender: Any) {
-        let tripVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnATripViewController") as! OnATripViewController
-        self.navigationController?.pushViewController(tripVC, animated: true)
+        startATrip(rideId: self.rideId)
     }
     @IBAction func confirmArrivalBtnAction(_ sender: Any) {
-        riderNotifiedInfoView.isHidden = false
-        confirmArrivalBtn.isHidden = true
-        startTripBtn.backgroundColor = UIColor(red: 4/255, green: 152/255, blue: 71/255, alpha: 1)
+        confirmReached(rideId: self.rideId)
     }
     @IBAction func navigateBtnAction(_ sender: Any) {
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
+extension TripvViewController {
+    func startATrip(rideId: Int) {
+        self.showActivityIndicator()
+        let parameter: [String : Any] = ["RideID": rideId, "Latitude": 3.1, "Longitude": 2.1]
+        NetworkManager.startRide(parameter: parameter) { (status, response) in
+            self.removeActivityIndicator()
+            if response?.statusCode == APIStatusCodes.OperationSuccess {
+                let tripVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnATripViewController") as! OnATripViewController
+                self.navigationController?.pushViewController(tripVC, animated: true)
+            }
+            
+        }
+    }
+    
+    func confirmReached(rideId: Int) {
+        self.showActivityIndicator()
+        let parameter: [String : Any] = ["RideID": rideId, "Latitude": 3.1, "Longitude": 2.1]
+        NetworkManager.confirmReachedRiderLocation(parameter: parameter) { (status, response) in
+           self.removeActivityIndicator()
+            if response?.statusCode == APIStatusCodes.OperationSuccess {
+                self.riderNotifiedInfoView.isHidden = false
+                self.confirmArrivalBtn.isHidden = true
+                self.startTripBtn.isEnabled = true
+                self.startTripBtn.backgroundColor = UIColor(red: 4/255, green: 152/255, blue: 71/255, alpha: 1)
+            }
+        }
+        
+    }
 }
