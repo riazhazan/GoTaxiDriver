@@ -267,7 +267,7 @@ California Hot Springs, CA, California, 93207
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="246" translatesAutoresizingMaskIntoConstraints="NO" id="9cx-K2-l1h">
-                                        <rect key="frame" x="299" y="0.0" width="1" height="80"/>
+                                        <rect key="frame" x="295" y="0.0" width="1" height="80"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="Wan-fh-gEl"/>
@@ -292,7 +292,7 @@ California Hot Springs, CA, California, 93207
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="j2r-v2-WVf" secondAttribute="bottom" id="0He-E7-tOc"/>
-                                    <constraint firstItem="9cx-K2-l1h" firstAttribute="leading" secondItem="j2r-v2-WVf" secondAttribute="trailing" constant="8" id="7OP-cG-P1F"/>
+                                    <constraint firstItem="9cx-K2-l1h" firstAttribute="leading" secondItem="j2r-v2-WVf" secondAttribute="trailing" constant="4" id="7OP-cG-P1F"/>
                                     <constraint firstItem="wMa-Te-mLm" firstAttribute="centerY" secondItem="Iwp-lE-ydp" secondAttribute="centerY" id="7bf-2T-EpY"/>
                                     <constraint firstItem="j2r-v2-WVf" firstAttribute="leading" secondItem="Iwp-lE-ydp" secondAttribute="leading" constant="20" id="9RS-E9-5eA"/>
                                     <constraint firstItem="9cx-K2-l1h" firstAttribute="top" secondItem="Iwp-lE-ydp" secondAttribute="top" id="AnW-eo-cAW"/>
@@ -301,8 +301,8 @@ California Hot Springs, CA, California, 93207
                                     <constraint firstAttribute="bottom" secondItem="9cx-K2-l1h" secondAttribute="bottom" id="RP9-uX-GPv"/>
                                     <constraint firstAttribute="trailing" secondItem="wMa-Te-mLm" secondAttribute="trailing" constant="9" id="eWj-hw-xQL"/>
                                     <constraint firstAttribute="bottom" secondItem="wMa-Te-mLm" secondAttribute="bottom" constant="10" id="jRt-ZA-xVY"/>
-                                    <constraint firstAttribute="trailing" secondItem="9cx-K2-l1h" secondAttribute="trailing" constant="75" id="pSl-4J-SLl"/>
-                                    <constraint firstItem="wMa-Te-mLm" firstAttribute="leading" secondItem="9cx-K2-l1h" secondAttribute="trailing" constant="6" id="q7K-0f-ZVY"/>
+                                    <constraint firstAttribute="trailing" secondItem="9cx-K2-l1h" secondAttribute="trailing" constant="79" id="pSl-4J-SLl"/>
+                                    <constraint firstItem="wMa-Te-mLm" firstAttribute="leading" secondItem="9cx-K2-l1h" secondAttribute="trailing" constant="10" id="q7K-0f-ZVY"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c13-xu-pJE" customClass="GMSMapView">

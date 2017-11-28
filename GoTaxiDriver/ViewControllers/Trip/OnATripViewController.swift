@@ -24,7 +24,7 @@ class OnATripViewController: UIViewController {
     }
 
     @IBAction func collectCashBtnAction(_ sender: Any) {
-        
+        self.stopRideAndCollectMoney(rideId: self.rideId)
     }
     @IBAction func completeTripBtnAction(_ sender: Any) {
         self.completeTrip(rideId: self.rideId)
@@ -40,10 +40,13 @@ extension OnATripViewController {
     func completeTrip(rideId: Int) {
         self.showActivityIndicator()
         let parameter: [String : Any] = ["RideID": rideId, "Latitude": 3.1, "Longitude": 2.1]
-        NetworkManager.startRide(parameter: parameter) { (status, response) in
+        NetworkManager.completeRide(parameter: parameter) { (status, response) in
             self.removeActivityIndicator()
             if response?.statusCode == APIStatusCodes.OperationSuccess {
-                self.showAlertWithTitle("", message: "You have completed your ride.", OKButtonTitle: "OK", OKcompletion: nil, cancelButtonTitle: nil, cancelCompletion: nil)
+            self.showAlertWithTitle("", message: "You have completed your ride.", OKButtonTitle: "OK", OKcompletion: {
+                self.navigationController?.popToRootViewController(animated: true)
+            }, cancelButtonTitle: nil, cancelCompletion: nil)
+            
             }
         }
     }
@@ -67,6 +70,7 @@ extension OnATripViewController {
 extension OnATripViewController:StopTripDelegate {
     func didCollectedMoneyFromRider() {
         collectCashBtn.isEnabled = false
+        collectCashBtn.alpha = 0.5
         completeTripBtn.isEnabled = true
         completeTripBtn.backgroundColor = UIColor.red
     }
