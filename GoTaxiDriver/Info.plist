@@ -50,5 +50,9 @@
 	<string>We requires access to the camera to share some images.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We require access to your location when you are ready to drive.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We require access to your location when you are ready to drive.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We require access to your location when you are ready to drive.</string>
 </dict>
 </plist>

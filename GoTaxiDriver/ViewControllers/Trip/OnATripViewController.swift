@@ -12,23 +12,17 @@ class OnATripViewController: UIViewController {
 
     @IBOutlet weak var searchBox: UISearchBar!
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var completeTripBtn: UIButton!
-    @IBOutlet weak var collectCashBtn: UIButton!
+    
     var rideId: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "GO TAXI"
-        completeTripBtn.isEnabled = false
+        
         searchBox.layer.borderWidth = 1
         searchBox.layer.borderColor = UIColor().textFieldBorderColor.cgColor
     }
 
-    @IBAction func collectCashBtnAction(_ sender: Any) {
-        self.stopRideAndCollectMoney(rideId: self.rideId)
-    }
-    @IBAction func completeTripBtnAction(_ sender: Any) {
-        self.completeTrip(rideId: self.rideId)
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,47 +30,4 @@ class OnATripViewController: UIViewController {
 
 }
 
-extension OnATripViewController {
-    func completeTrip(rideId: Int) {
-        self.showActivityIndicator()
-        let parameter: [String : Any] = ["RideID": rideId, "Latitude": 3.1, "Longitude": 2.1]
-        NetworkManager.completeRide(parameter: parameter) { (status, response) in
-            self.removeActivityIndicator()
-            if response?.statusCode == APIStatusCodes.OperationSuccess {
-             
-                self.showAlertWithTitle("Go Taxi", message: "You have completed your ride.", OKButtonTitle: "OK", OKcompletion: { (action) in
-                    self.navigationController?.popToRootViewController(animated: true)
-                }, cancelButtonTitle: nil, cancelCompletion: nil)
-            }
-        }
-    }
-    
-    func stopRideAndCollectMoney(rideId: Int) {
-        self.showActivityIndicator()
-        let parameter: [String : Any] = ["RideID": rideId, "DistanceTravelled": 10, "TimeTaken": 20, "TravelledRouteGeoCollection": []]
-        NetworkManager.stopTheRide(parameter: parameter) { (status, response) in
-            self.removeActivityIndicator()
-            if response?.statusCode == APIStatusCodes.OperationSuccess {
-                let collectMoneyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CollectCashViewController") as! CollectCashViewController
-                collectMoneyVC.amount = (response?.amount ?? 0)!
-                collectMoneyVC.tripId = self.rideId
-                collectMoneyVC.stopTripDelegate = self
-                self.navigationController?.pushViewController(collectMoneyVC, animated: true)
-            }
-        }
-        
-    }
-}
-extension OnATripViewController:StopTripDelegate {
-    func didCollectedMoneyFromRider() {
-        collectCashBtn.isEnabled = false
-        collectCashBtn.alpha = 0.5
-        completeTripBtn.isEnabled = true
-        completeTripBtn.backgroundColor = UIColor.red
-    }
-}
 
-
-protocol StopTripDelegate {
-    func didCollectedMoneyFromRider()
-}

@@ -38,6 +38,7 @@
 		045FA96E1FCC250200F2A9A3 /* TripvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FA96D1FCC250200F2A9A3 /* TripvViewController.swift */; };
 		045FA9701FCC251B00F2A9A3 /* TripRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FA96F1FCC251B00F2A9A3 /* TripRequestViewController.swift */; };
 		045FA97B1FCC9EC600F2A9A3 /* OnATripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FA97A1FCC9EC600F2A9A3 /* OnATripViewController.swift */; };
+		04962B951FCE605200EC3922 /* GooglePlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04962B941FCE605200EC3922 /* GooglePlacesResponse.swift */; };
 		04B3F0A41FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3F0A31FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift */; };
 		04B57FE01FCD172C00D7D568 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B57FDF1FCD172C00D7D568 /* Ride.swift */; };
 		04B57FE21FCD17D200D7D568 /* CollectCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B57FE11FCD17D200D7D568 /* CollectCashViewController.swift */; };
@@ -129,6 +130,7 @@
 		045FA96D1FCC250200F2A9A3 /* TripvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripvViewController.swift; sourceTree = "<group>"; };
 		045FA96F1FCC251B00F2A9A3 /* TripRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestViewController.swift; sourceTree = "<group>"; };
 		045FA97A1FCC9EC600F2A9A3 /* OnATripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnATripViewController.swift; sourceTree = "<group>"; };
+		04962B941FCE605200EC3922 /* GooglePlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesResponse.swift; sourceTree = "<group>"; };
 		04B3F0A31FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeaderCellTableViewCell.swift; sourceTree = "<group>"; };
 		04B57FDF1FCD172C00D7D568 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		04B57FE11FCD17D200D7D568 /* CollectCashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectCashViewController.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				04BD3E591FC6C1540078A776 /* BaseResponse.swift */,
+				04962B941FCE605200EC3922 /* GooglePlacesResponse.swift */,
 				04BD3E611FC6CDD70078A776 /* ValidateOtp.swift */,
 				0448D9631FC7395E003AF738 /* DocumentList.swift */,
 				04B57FDF1FCD172C00D7D568 /* Ride.swift */,
@@ -699,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BD3E551FC6BFA80078A776 /* NetworkManager.swift in Sources */,
+				04962B951FCE605200EC3922 /* GooglePlacesResponse.swift in Sources */,
 				045FA9701FCC251B00F2A9A3 /* TripRequestViewController.swift in Sources */,
 				04BD3E6C1FC6ECB60078A776 /* UITextFieldExtension.swift in Sources */,
 				042AA7921FC687D8000BE630 /* LoginViewController.swift in Sources */,

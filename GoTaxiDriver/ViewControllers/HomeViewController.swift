@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     var lastLocation: CLLocation?
+    var marker = GMSMarker()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,13 +20,14 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        LocationService.sharedInstance.locationManager.startUpdatingLocation()
+        LocationService.sharedInstance.locationManager?.startUpdatingLocation()
         LocationService.sharedInstance.updateLocationDelegate = self
     }
 
     @IBAction func menuBtnAction(_ sender: Any) {
         let tripRequestVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TripRequestViewController") as! TripRequestViewController
         tripRequestVC.hidesBottomBarWhenPushed = true
+        tripRequestVC.currentLocation = self.lastLocation
         self.navigationController?.pushViewController(tripRequestVC, animated: false)
         
     }
@@ -38,9 +40,13 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
     func plotCurrentLocationOnMap(location: CLLocation) {
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 15);
+        
         let position = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let marker = GMSMarker(position: position)
+        marker = GMSMarker(position: position)
         marker.title = "Current Location"
+        self.mapView.camera = camera
+        self.mapView.isMyLocationEnabled = true
         marker.map = mapView
     }
 }

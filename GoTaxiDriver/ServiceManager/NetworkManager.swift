@@ -122,6 +122,39 @@ extension NetworkManager {
         }
     }
 }
+extension NetworkManager {
+    class func getDirection(origin: String!, destination: String!, wayPoints: [String]!, completionHandler: @escaping (GooglePlacesResponse?) -> Void) {
+        let baseUrl = "https://maps.googleapis.com/maps/api/directions/json?"
+        let apiKey = "AIzaSyDLlskLqvF8VoYCTs_j5PCMkW5CiPR-hvU"
+        if let originLocation = origin {
+            if let destinationLocation = destination {
+                var directionsURLString = baseUrl + "origin=" + originLocation + "&destination=" + destinationLocation
+                
+                if let routeWaypoints = wayPoints {
+                    directionsURLString += "&waypoints=optimize:true"
+                    
+                    for waypoint in routeWaypoints {
+                        directionsURLString += "|" + waypoint
+                    }
+                }
+                directionsURLString += "&sensor=true&mode=driving&key=\(apiKey)"
+                print("directionsURLString = \(directionsURLString)")
+                
+                let urlStr: String = directionsURLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)! as String
+                let placesUrl = URL(string: urlStr)
+                
+                Alamofire.request(placesUrl!, method: .get, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<GooglePlacesResponse>) in
+                    response.result.ifSuccess({
+                        completionHandler(response.result.value)
+                    })
+                    response.result.ifFailure {
+                        completionHandler(nil)
+                    }
+                }
+            }
+        }
+    }
+}
 
 extension NetworkManager {
     /// Analyses HTTP status code and returns API error status

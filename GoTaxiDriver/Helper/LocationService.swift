@@ -12,20 +12,21 @@ import CoreLocation
 public class LocationService: NSObject, CLLocationManagerDelegate{
     
     public static var sharedInstance = LocationService()
-    let locationManager: CLLocationManager
+    let locationManager: CLLocationManager?
     var updateLocationDelegate: UpdateLocationDelegate?
+    
     override init() {
         locationManager = CLLocationManager()
         
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.distanceFilter = 5
-        locationManager.activityType = .automotiveNavigation
-        locationManager.requestAlwaysAuthorization()
-        locationManager.allowsBackgroundLocationUpdates = false
-        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager?.distanceFilter = 5
+        locationManager?.activityType = .automotiveNavigation
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.allowsBackgroundLocationUpdates = false
+        locationManager?.pausesLocationUpdatesAutomatically = false
         
         super.init()
-        locationManager.delegate = self
+        locationManager?.delegate = self
     }
 
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
