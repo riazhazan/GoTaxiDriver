@@ -9,7 +9,7 @@
 import UIKit
 
 let GoogleMapAPIKey =  "AIzaSyCUiX7AjXx26yd2_D8A_uyvPSPZHLXETWk"
-
+let GooglePlacesAPIKey = "AIzaSyDLlskLqvF8VoYCTs_j5PCMkW5CiPR-hvU"
 let userEntityCode      = 100
 
 let AppRegularFont   = "HelveticaNeue"

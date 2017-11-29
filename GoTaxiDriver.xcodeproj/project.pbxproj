@@ -28,6 +28,8 @@
 		042AA7921FC687D8000BE630 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7891FC687D7000BE630 /* LoginViewController.swift */; };
 		042AA7941FC68855000BE630 /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7931FC68855000BE630 /* RegistrationRequest.swift */; };
 		042AA7971FC689D4000BE630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 042AA7961FC689D4000BE630 /* Localizable.strings */; };
+		043070031FCEFAD40067C9D5 /* TripRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043070021FCEFAD40067C9D5 /* TripRequestViewController.swift */; };
+		043070061FCF26C80067C9D5 /* AccountsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043070051FCF26C80067C9D5 /* AccountsTableCell.swift */; };
 		04367B771FC7CA58004C6E52 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04367B761FC7CA58004C6E52 /* CameraViewController.swift */; };
 		04367B791FC7CAD8004C6E52 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04367B781FC7CAD8004C6E52 /* PreviewViewController.swift */; };
 		0440F2551FC706D100DF7AE1 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440F2541FC706D100DF7AE1 /* NetworkConstants.swift */; };
@@ -36,7 +38,6 @@
 		0448D9641FC7395E003AF738 /* DocumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D9631FC7395E003AF738 /* DocumentList.swift */; };
 		0448D9681FC748BF003AF738 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448D9671FC748BF003AF738 /* UploadViewController.swift */; };
 		045FA96E1FCC250200F2A9A3 /* TripvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FA96D1FCC250200F2A9A3 /* TripvViewController.swift */; };
-		045FA9701FCC251B00F2A9A3 /* TripRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FA96F1FCC251B00F2A9A3 /* TripRequestViewController.swift */; };
 		045FA97B1FCC9EC600F2A9A3 /* OnATripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FA97A1FCC9EC600F2A9A3 /* OnATripViewController.swift */; };
 		04962B951FCE605200EC3922 /* GooglePlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04962B941FCE605200EC3922 /* GooglePlacesResponse.swift */; };
 		04B3F0A41FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3F0A31FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift */; };
@@ -120,6 +121,8 @@
 		042AA7891FC687D7000BE630 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		042AA7931FC68855000BE630 /* RegistrationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
 		042AA7961FC689D4000BE630 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		043070021FCEFAD40067C9D5 /* TripRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripRequestViewController.swift; sourceTree = "<group>"; };
+		043070051FCF26C80067C9D5 /* AccountsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableCell.swift; sourceTree = "<group>"; };
 		04367B761FC7CA58004C6E52 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		04367B781FC7CAD8004C6E52 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		0440F2541FC706D100DF7AE1 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
@@ -128,7 +131,6 @@
 		0448D9631FC7395E003AF738 /* DocumentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentList.swift; sourceTree = "<group>"; };
 		0448D9671FC748BF003AF738 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		045FA96D1FCC250200F2A9A3 /* TripvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripvViewController.swift; sourceTree = "<group>"; };
-		045FA96F1FCC251B00F2A9A3 /* TripRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestViewController.swift; sourceTree = "<group>"; };
 		045FA97A1FCC9EC600F2A9A3 /* OnATripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnATripViewController.swift; sourceTree = "<group>"; };
 		04962B941FCE605200EC3922 /* GooglePlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesResponse.swift; sourceTree = "<group>"; };
 		04B3F0A31FC96CF2003BE0EE /* RegisterHeaderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeaderCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -256,12 +258,12 @@
 			isa = PBXGroup;
 			children = (
 				042AA7481FC686EB000BE630 /* ViewController.swift */,
-				042AA7811FC687D7000BE630 /* AccountViewController.swift */,
 				042AA7881FC687D7000BE630 /* EarningsViewController.swift */,
 				042AA7861FC687D7000BE630 /* HomeViewController.swift */,
 				042AA7851FC687D7000BE630 /* LandingViewController.swift */,
 				042AA7891FC687D7000BE630 /* LoginViewController.swift */,
 				042AA7871FC687D7000BE630 /* RatingsViewController.swift */,
+				043070041FCF26960067C9D5 /* Account */,
 				045FA96C1FCC24C900F2A9A3 /* Trip */,
 				04BD3E4C1FC6A0580078A776 /* BaseViewController */,
 				042AA7821FC687D7000BE630 /* Registration */,
@@ -321,6 +323,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		043070041FCF26960067C9D5 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				042AA7811FC687D7000BE630 /* AccountViewController.swift */,
+				043070051FCF26C80067C9D5 /* AccountsTableCell.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		0440F2561FC7240300DF7AE1 /* UploadDocs */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,7 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				045FA96D1FCC250200F2A9A3 /* TripvViewController.swift */,
-				045FA96F1FCC251B00F2A9A3 /* TripRequestViewController.swift */,
+				043070021FCEFAD40067C9D5 /* TripRequestViewController.swift */,
 				045FA97A1FCC9EC600F2A9A3 /* OnATripViewController.swift */,
 				04B57FE11FCD17D200D7D568 /* CollectCashViewController.swift */,
 			);
@@ -600,6 +611,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -607,6 +619,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -703,14 +716,15 @@
 			files = (
 				04BD3E551FC6BFA80078A776 /* NetworkManager.swift in Sources */,
 				04962B951FCE605200EC3922 /* GooglePlacesResponse.swift in Sources */,
-				045FA9701FCC251B00F2A9A3 /* TripRequestViewController.swift in Sources */,
 				04BD3E6C1FC6ECB60078A776 /* UITextFieldExtension.swift in Sources */,
 				042AA7921FC687D8000BE630 /* LoginViewController.swift in Sources */,
 				042AA78A1FC687D8000BE630 /* TabViewController.swift in Sources */,
 				0448D9641FC7395E003AF738 /* DocumentList.swift in Sources */,
+				043070061FCF26C80067C9D5 /* AccountsTableCell.swift in Sources */,
 				042AA78C1FC687D8000BE630 /* RegistrationTableCell.swift in Sources */,
 				042AA77F1FC687C8000BE630 /* Constants.swift in Sources */,
 				0448D9681FC748BF003AF738 /* UploadViewController.swift in Sources */,
+				043070031FCEFAD40067C9D5 /* TripRequestViewController.swift in Sources */,
 				04BD3E621FC6CDD70078A776 /* ValidateOtp.swift in Sources */,
 				045FA96E1FCC250200F2A9A3 /* TripvViewController.swift in Sources */,
 				04BD3E161FC69F270078A776 /* StringExtension.swift in Sources */,

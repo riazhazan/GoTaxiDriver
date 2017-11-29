@@ -9,6 +9,7 @@ target 'GoTaxiDriver' do
     pod 'AlamofireObjectMapper', '5.0.0'
   	pod 'GoogleMaps', '2.5.0'
     pod 'IQKeyboardManagerSwift', '5.0.0'
+    pod 'SwiftyJSON'
 
   target 'GoTaxiDriverTests' do
     inherit! :search_paths

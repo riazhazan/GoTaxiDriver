@@ -48,7 +48,7 @@ class TabViewController: UITabBarController {
         nvHome.setNavigationBarHidden(true, animated: false)
         nvEarnings.setNavigationBarHidden(true, animated: false)
         nvRatings.setNavigationBarHidden(true, animated: false)
-        nvAccount.setNavigationBarHidden(true, animated: false)
+        //nvAccount.setNavigationBarHidden(true, animated: false)
         
         self.viewControllers = [nvHome,nvEarnings,nvRatings,nvAccount]
         

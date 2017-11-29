@@ -27,8 +27,6 @@ class RegistrationViewController: BaseViewController {
     var countryPicker:UIPickerView?
     var requestModel = RegistrationRequest()
     var isUserNameAvailable: Bool = false
-    var registartionPlaceholders = [NSLocalizedString("USERNAME", comment: ""), NSLocalizedString("FNAME", comment: ""), NSLocalizedString("LNAME", comment: ""), NSLocalizedString("COUNTRY", comment: ""), NSLocalizedString("PHONE", comment: ""), NSLocalizedString("PASSWORD", comment: ""),
-        NSLocalizedString("CONFIRM_PASSWORD", comment: "")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,31 +145,43 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
         cell.inputTxtField.delegate = self
         cell.inputTxtField.text = ""
         
+        
         if indexPath.row == 0 {
             cell.inputTxtField.tag = RegistrationFormRow.userName.rawValue
             cell.inputTxtField.becomeFirstResponder()
             cell.inputTxtField.text = requestModel.userName
+            cell.inputTxtField.placeholder = NSLocalizedString("USERNAME", comment: "")
         } else if indexPath.row == 2 {
             cell.inputTxtField.tag = RegistrationFormRow.city.rawValue
             cell.inputTxtField.text = requestModel.city
-            cell.inputTxtField.placeholder = "City"
+            cell.inputTxtField.placeholder =  NSLocalizedString("CITY", comment: "")
         } else if indexPath.row == 3 {
             cell.inputTxtField.tag = RegistrationFormRow.inviteCode.rawValue
             cell.inputTxtField.text = requestModel.inviteCode
-            cell.inputTxtField.placeholder = "Invite code (optional)"
+            cell.inputTxtField.placeholder =  NSLocalizedString("INVITATION_CODE", comment: "")
         }
         return cell
     }
     
     func configureBasicDetailsCell(cell: BasicDetailsTableCell, indexPath: IndexPath) {
+        
+        
+        
         cell.firstNameTxtField.tag = RegistrationFormRow.firstName.rawValue
         cell.firstNameTxtField.text = requestModel.firstName
-        cell.lastNameTxtField.tag = RegistrationFormRow.lastName.rawValue
+        cell.firstNameTxtField.placeholder = NSLocalizedString("FNAME", comment: "")
+        
+        cell.lastNameTxtField.tag =  RegistrationFormRow.lastName.rawValue
         cell.lastNameTxtField.text = requestModel.lastName
+        cell.lastNameTxtField.placeholder = NSLocalizedString("LNAME", comment: "")
+        
         cell.phoneTxtField.tag = RegistrationFormRow.phoneNumber.rawValue
         cell.phoneTxtField.text = requestModel.phone
+        cell.phoneTxtField.placeholder = NSLocalizedString("PHONE", comment: "")
+        
         cell.passwordTxtField.tag = RegistrationFormRow.password.rawValue
         cell.passwordTxtField.text = requestModel.password
+        cell.passwordTxtField.text = NSLocalizedString("PASSWORD", comment: "")
         cell.firstNameTxtField.delegate = self
         cell.lastNameTxtField.delegate = self
         cell.phoneTxtField.delegate = self

@@ -13,6 +13,8 @@
 "PHONE" = "Phone number*";
 "PASSWORD" = "Password*";
 "CONFIRM_PASSWORD" = "Confirm Password*";
+"CITY" = "City";
+"INVITATION_CODE" = "Invitation code(optional)";
 "REGISTER" = "REGISTER";
 "SIGNIN" = "SIGN IN";
 "NEXT"  = "NEXT";
@@ -30,3 +32,11 @@
 "COLLECT_CASH" = "COLLECT CASH";
 "AMOUNT_DUE" = "AMOUNT DUE";
 
+//Account
+"DRIVER_PROFILE" = "Driver Profile";
+"HELP" = "Help";
+"WAYBILL" = "Waybill";
+"SETTINGS" = "Settings";
+"DOCUMENTS" = "Documents";
+"ABOUT" = "About";
+"SIGNOUT" = "Sign Out";

@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import SwiftyJSON
 
 class TripvViewController: UIViewController {
     @IBOutlet weak var navigateBtn: UIButton!
@@ -25,18 +26,24 @@ class TripvViewController: UIViewController {
     
     @IBOutlet weak var completeTripBtn: UIButton!
     @IBOutlet weak var collectCashBtn: UIButton!
-    
+    var routes:[JSON]?
     var rideId: Int = 0
+    var currentLocation: CLLocation?
+    var riderLocation:CLLocation?
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         self.title = "GO TAXI"
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.drawRouteToRiderLocation(currentLocation: currentLocation!, to: self.riderLocation!)
+        self.drawPath(riderLocation: self.riderLocation!)
     }
     
     func configureUI() {
+        self.navigationItem.hidesBackButton = true
         self.configureBottomViewLayout(view: tripBgView)
         self.configureBottomViewLayout(view: onATripBgView)
         self.completeTripBtn.isEnabled = false
@@ -135,6 +142,47 @@ extension TripvViewController {
             }
         }
         
+    }
+}
+
+extension TripvViewController {
+    func drawRouteToRiderLocation(currentLocation: CLLocation, to riderLocation: CLLocation) {
+        let camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 2);
+        
+        let position = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+        let marker = GMSMarker(position: position)
+        marker.title = "Current Location"
+        self.mapView.camera = camera
+        self.mapView.isMyLocationEnabled = true
+        marker.map = mapView
+        
+        let riderPosition = CLLocationCoordinate2D(latitude: riderLocation.coordinate.latitude, longitude: riderLocation.coordinate.longitude)
+        let riderMarker = GMSMarker(position: riderPosition)
+        riderMarker.title = "Rider Location"
+        riderMarker.map = mapView
+    }
+    
+    func drawPath(riderLocation: CLLocation)
+    {
+        for route in self.routes ?? []
+        {
+            let routeOverviewPolyline = route["overview_polyline"].dictionary
+            let points = routeOverviewPolyline?["points"]?.stringValue
+            let path = GMSPath.init(fromEncodedPath: points!)
+            let polyline = GMSPolyline.init(path: path)
+            polyline.strokeWidth = 7
+            polyline.strokeColor = UIColor.black
+            polyline.map = self.mapView
+            
+            var bounds = GMSCoordinateBounds()
+            for index in UInt(0)...(path?.count())! {
+                bounds = bounds.includingCoordinate((path?.coordinate(at: index))!)
+            }
+            self.mapView.animate(toZoom: 5)
+            self.mapView.animate(with: GMSCameraUpdate.fit(bounds))
+            let update = GMSCameraUpdate.fit(bounds, withPadding: 20.0)
+            self.mapView.moveCamera(update)
+        }
     }
 }
 
