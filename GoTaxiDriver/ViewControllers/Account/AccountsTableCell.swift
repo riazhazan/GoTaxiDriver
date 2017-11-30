@@ -10,6 +10,7 @@ import UIKit
 
 class AccountsTableCell: UITableViewCell {
 
+    @IBOutlet weak var lblTopConstrain: NSLayoutConstraint!
     @IBOutlet weak var iconImgView: UIImageView!
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
@@ -30,11 +31,12 @@ class AccountsTableTopCell: UITableViewCell {
     
     @IBOutlet weak var carNameLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var vehicleImgView: UIButton!
-    @IBOutlet weak var profileImgView: UIView!
+    @IBOutlet weak var vehicleImg: UIButton!
+    @IBOutlet weak var profileImg: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        vehicleImg.layer.cornerRadius = 37.5
+        profileImg.layer.cornerRadius = 37.5
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -107,11 +107,16 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if !isUserNameAvailable {
+            if indexPath.row == 1 {
+                return 100
+            }
             return 50
         }
         
         if indexPath.row == 1 {
          return 150
+        } else if indexPath.row == 4 {
+            return 100
         }
         return 50
     }
@@ -192,7 +197,12 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
     func configureRegisterBtnCell(_ tableView:UITableView, indexPath: IndexPath) -> ActionButtonTableCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActionButtonTableCell", for: indexPath) as! ActionButtonTableCell
         cell.actionBtn.addTarget(self, action: #selector(signupBtnAction), for: .touchUpInside)
-        cell.actionBtn.setTitle(NSLocalizedString("REGISTER", comment: ""), for: .normal)
+        cell.loginBtn.addTarget(self, action: #selector(loginBtnAction), for: .touchUpInside)
+        
+        let btnTitle = isUserNameAvailable ? NSLocalizedString("REGISTER", comment: "") : NSLocalizedString("NEXT", comment: "")
+        
+        cell.actionBtn.setTitle(btnTitle, for: .normal)
+        cell.loginBtn.setTitle(NSLocalizedString("LOGIN", comment: ""), for: .normal)
         
         if !isUserNameAvailable {
             cell.actionBtn.setTitle(NSLocalizedString("NEXT", comment: ""), for: .normal)
@@ -213,7 +223,9 @@ extension RegistrationViewController : UITableViewDelegate, UITableViewDataSourc
         return 230
     }
     
-    
+    @objc func loginBtnAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
     func configureTypePicker(forTextField: UITextField) {
         self.countryPicker = UIPickerView()
         self.countryPicker?.dataSource = self

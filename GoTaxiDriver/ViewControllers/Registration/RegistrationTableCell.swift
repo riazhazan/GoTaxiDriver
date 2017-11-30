@@ -51,6 +51,7 @@ class BasicDetailsTableCell: UITableViewCell {
 class ActionButtonTableCell: UITableViewCell {
     @IBOutlet weak var actionBtn: UIButton!
     
+    @IBOutlet weak var loginBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
        

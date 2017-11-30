@@ -5,6 +5,13 @@
   Created by Riaz on 23/11/17.
   Copyright © 2017 Go Taxi. All rights reserved.
 */
+
+//LOGIN
+
+"MOBILE_NUMBER" = "MOBILE NUMBER";
+"COUNTRY_C" = "COUNTRY";
+"OTP_INFO" = "AN OTP HAS BEEN SENT TO YOUR MOBILE NUMBER. PLEASE ENTER THE RECIEVED OTP BELOW";
+
 //REGISTRATION
 "USERNAME" = "Username*";
 "FNAME" = "First name*";
@@ -16,6 +23,8 @@
 "CITY" = "City";
 "INVITATION_CODE" = "Invitation code(optional)";
 "REGISTER" = "REGISTER";
+"HAVE_ACCOUNT" = "Have an account?";
+"LOGIN" = "Log In";
 "SIGNIN" = "SIGN IN";
 "NEXT"  = "NEXT";
 "DOCUMENTS" = "Documents";

@@ -258,11 +258,10 @@
 			isa = PBXGroup;
 			children = (
 				042AA7481FC686EB000BE630 /* ViewController.swift */,
-				042AA7881FC687D7000BE630 /* EarningsViewController.swift */,
-				042AA7861FC687D7000BE630 /* HomeViewController.swift */,
-				042AA7851FC687D7000BE630 /* LandingViewController.swift */,
-				042AA7891FC687D7000BE630 /* LoginViewController.swift */,
-				042AA7871FC687D7000BE630 /* RatingsViewController.swift */,
+				04A85F981FD064130086B0AC /* Earnings */,
+				04A85F971FD064060086B0AC /* Ratings */,
+				04A85F961FD063F50086B0AC /* Home */,
+				04A85F951FD063CE0086B0AC /* Login */,
 				043070041FCF26960067C9D5 /* Account */,
 				045FA96C1FCC24C900F2A9A3 /* Trip */,
 				04BD3E4C1FC6A0580078A776 /* BaseViewController */,
@@ -353,6 +352,39 @@
 				04B57FE11FCD17D200D7D568 /* CollectCashViewController.swift */,
 			);
 			path = Trip;
+			sourceTree = "<group>";
+		};
+		04A85F951FD063CE0086B0AC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				042AA7851FC687D7000BE630 /* LandingViewController.swift */,
+				042AA7891FC687D7000BE630 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		04A85F961FD063F50086B0AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				042AA7861FC687D7000BE630 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04A85F971FD064060086B0AC /* Ratings */ = {
+			isa = PBXGroup;
+			children = (
+				042AA7871FC687D7000BE630 /* RatingsViewController.swift */,
+			);
+			path = Ratings;
+			sourceTree = "<group>";
+		};
+		04A85F981FD064130086B0AC /* Earnings */ = {
+			isa = PBXGroup;
+			children = (
+				042AA7881FC687D7000BE630 /* EarningsViewController.swift */,
+			);
+			path = Earnings;
 			sourceTree = "<group>";
 		};
 		04BD3E4C1FC6A0580078A776 /* BaseViewController */ = {
