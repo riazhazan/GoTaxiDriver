@@ -2165,7 +2165,7 @@ California Hot Springs, CA, California, 93207
         <image name="camIcon" width="32" height="32"/>
         <image name="cam_switch_icon" width="16" height="16"/>
         <image name="cancel" width="32" height="32"/>
-        <image name="carIcon" width="32" height="32"/>
+        <image name="carIcon" width="16" height="16"/>
         <image name="cash" width="24" height="24"/>
         <image name="contact" width="32" height="32"/>
         <image name="cross_icon_shadowed" width="33" height="33"/>
