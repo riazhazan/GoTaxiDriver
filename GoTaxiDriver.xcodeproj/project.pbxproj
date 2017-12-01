@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0429A19F1FD0EDC000834475 /* CurrentTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429A19E1FD0EDC000834475 /* CurrentTripsViewController.swift */; };
+		0429A1A21FD0EE8000834475 /* CurrentTripsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429A1A11FD0EE8000834475 /* CurrentTripsTableCell.swift */; };
 		042AA7471FC686EB000BE630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7461FC686EB000BE630 /* AppDelegate.swift */; };
 		042AA7491FC686EB000BE630 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7481FC686EB000BE630 /* ViewController.swift */; };
 		042AA74C1FC686EB000BE630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042AA74A1FC686EB000BE630 /* Main.storyboard */; };
@@ -94,6 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0429A19E1FD0EDC000834475 /* CurrentTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTripsViewController.swift; sourceTree = "<group>"; };
+		0429A1A11FD0EE8000834475 /* CurrentTripsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTripsTableCell.swift; sourceTree = "<group>"; };
 		042AA7431FC686EB000BE630 /* GoTaxiDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoTaxiDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		042AA7461FC686EB000BE630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		042AA7481FC686EB000BE630 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +192,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0429A1A01FD0EE5B00834475 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				0429A1A11FD0EE8000834475 /* CurrentTripsTableCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		042AA73A1FC686EB000BE630 = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +362,8 @@
 				043070021FCEFAD40067C9D5 /* TripRequestViewController.swift */,
 				045FA97A1FCC9EC600F2A9A3 /* OnATripViewController.swift */,
 				04B57FE11FCD17D200D7D568 /* CollectCashViewController.swift */,
+				0429A19E1FD0EDC000834475 /* CurrentTripsViewController.swift */,
+				0429A1A01FD0EE5B00834475 /* cell */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -764,10 +778,12 @@
 				04B57FE01FCD172C00D7D568 /* Ride.swift in Sources */,
 				04BD3E661FC6CF3E0078A776 /* UIViewControllerExtension.swift in Sources */,
 				04367B771FC7CA58004C6E52 /* CameraViewController.swift in Sources */,
+				0429A19F1FD0EDC000834475 /* CurrentTripsViewController.swift in Sources */,
 				04BD3E521FC6B5BD0078A776 /* UIColorExtension.swift in Sources */,
 				0440F25A1FC72E9100DF7AE1 /* DocumentsTableCell.swift in Sources */,
 				04BD3E5E1FC6CB070078A776 /* LocaleExtension.swift in Sources */,
 				04EC832F1FC8171B0097F264 /* SharedObjects.swift in Sources */,
+				0429A1A21FD0EE8000834475 /* CurrentTripsTableCell.swift in Sources */,
 				042AA78D1FC687D8000BE630 /* RegistrationViewController.swift in Sources */,
 				042AA78B1FC687D8000BE630 /* AccountViewController.swift in Sources */,
 				04BD3E4E1FC6A0580078A776 /* BaseViewController.swift in Sources */,

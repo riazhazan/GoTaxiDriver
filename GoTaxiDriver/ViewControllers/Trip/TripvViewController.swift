@@ -34,6 +34,7 @@ class TripvViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         self.title = "GO TAXI"
+        configureNavigationBarButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +68,23 @@ class TripvViewController: UIViewController {
     @IBAction func navigateBtnAction(_ sender: Any) {
         
     }
+
+    func configureNavigationBarButton() {
+        let button = UIButton.init(type: .custom)
+        button.setImage(UIImage(named: "currentTrips"), for: UIControlState.normal)
+        button.addTarget(self, action: #selector(currentTripBtnAction), for: UIControlEvents.touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    @objc func currentTripBtnAction() {
+        let currentTripsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrentTripsViewController") as! CurrentTripsViewController
+        self.navigationController?.pushViewController(currentTripsVC, animated: true)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
